@@ -1,5 +1,7 @@
 const ProductsData = [
     {
+        companyLogo: "fas fa-building",
+        companyName: "Nombre de la empresa",
         section: "fas fa-cubes",
         image: "https://d26lpennugtm8s.cloudfront.net/stores/257/518/products/vasos11-eea4a6215faca1de7715123616989100-640-0.jpg",
         tagIcon: "fas fa-tag",
@@ -7,9 +9,15 @@ const ProductsData = [
         title: "Vasos Desechables",
         descriptionProduct: "Paquete de vasos x12, con capacidad de 200ml, ideales para las fiestas.",
         price: "4.900$",
-        txtBtn: "Agregar"
+        likeIcon: "far fa-heart",
+        txtBtn: "Agregar",
+        backgroundBody: "#E3D2FF",
+        backgroundFooter: "#8F4DFF",
+        backgroundButton: "#1D004D"
     },
     {
+        companyLogo: "fas fa-building",
+        companyName: "Nombre de la empresa",
         section: "fas fa-cubes",
         image: "https://dojiw2m9tvv09.cloudfront.net/21066/product/pulseraangeldelaguarda3305.jpg",
         tagIcon: "fas fa-tag",
@@ -17,29 +25,47 @@ const ProductsData = [
         title: "Pulsera Ángel de la Guarda",
         descriptionProduct: "Cada piedra de murano tiene un significado especial, ideal para un regalo",
         price: "45.700$",
-        txtBtn: "Agregar"
+        likeIcon: "far fa-heart",
+        txtBtn: "Agregar",
+        backgroundBody: "#E3D2FF",
+        backgroundFooter: "#8F4DFF",
+        backgroundButton: "#1D004D"
     },
     {
+        companyLogo: "fas fa-building",
+        companyName: "Nombre de la empresa",
         section: "fas fa-cubes",
         image: "https://ebani.com.co/wp-content/uploads/2020/01/Fuente-natural-con-dos-bons%C3%A1is.jpg",
         tagIcon: "fas fa-tag",
         tagDescription: "Ecológico",
         title: "Fuente Natural con dos Bonsais",
-        descriptionProduct: "Fuente natural con dos Bosais Shimpaku >5 años de edad. Su caída de agua es muy relajante, especialmente para lugares estresantes como la casa u oficina y algo importante, se adaptan muy bien a interiores. Brindándote frescura, confort y un fino aroma a pino y bosque.",
+        descriptionProduct: "Fuente natural con dos Bosais Shimpaku >5 años de edad. ",
         price: "310.000$",
-        txtBtn: "Agregar"
+        likeIcon: "far fa-heart",
+        txtBtn: "Agregar",
+        backgroundBody: "#E3D2FF",
+        backgroundFooter: "#8F4DFF",
+        backgroundButton: "#1D004D"
     },
     {
+        companyLogo: "fas fa-building",
+        companyName: "Nombre de la empresa",
         section: "fas fa-cubes",
         image: "https://comercialpapelera.co/tienda/306-medium_default/bombas-sempertex-r-12-infinity-feliz-cumpleaos-surt-x-12.jpg",
         tagIcon: "fas fa-tag",
         tagDescription: "Decoración",
-        title: "BOMBAS SEMPERTEX R-12 INFINITY FELIZ CUMPLEAÑOS SURT X 12",
-        descriptionProduct: "Celebra tus fiestas y reuniones con los elementos ms originales, Bomba tamao: R-12 (30 cm) X 12 UND, diseo FELIZ CUMPLEAOS, infinity, colores surtidos Fucsia, Rojo, Amarillo, Verde Lima, Azul Caribe, Azul Rey, Violeta, Naranja.",
+        title: "Bombas Sempertex x12",
+        descriptionProduct: "Celebra tus fiestas y reuniones con los elementos mas originales.",
         price: "8,500$",
-        txtBtn: "Agregar"
+        likeIcon: "far fa-heart",
+        txtBtn: "Agregar",
+        backgroundBody: "#E3D2FF",
+        backgroundFooter: "#8F4DFF",
+        backgroundButton: "#1D004D"
     },
     {
+        companyLogo: "fas fa-building",
+        companyName: "Nombre de la empresa",
         section: "fas fa-cubes",
         image: "https://http2.mlstatic.com/D_NQ_NP_722262-MCO31111289212_062019-O.webp",
         tagIcon: "fas fa-tag",
@@ -47,19 +73,31 @@ const ProductsData = [
         title: "Navaja Suiza Original",
         descriptionProduct: "¿Una excursión de alpinismo o de trekking? Con la Climber llegará más lejos.",
         price: "139.000$",
-        txtBtn: "Agregar"
+        likeIcon: "far fa-heart",
+        txtBtn: "Agregar",
+        backgroundBody: "#E3D2FF",
+        backgroundFooter: "#8F4DFF",
+        backgroundButton: "#1D004D"
     },
     {
+        companyLogo: "fas fa-building",
+        companyName: "Nombre de la empresa",
         section: "fas fa-hamburger",
         image: "https://cocina-casera.com/wp-content/uploads/2016/11/hamburguesa-queso-receta.jpg",
         tagIcon: "fas fa-tag",
         tagDescription: "Comida rapida",
         title: "Hamburquesa doble queso",
-        descriptionProduct: "Deliciosa hamburquesa con doble queso, carne de 100 libras, tomate, lechuga y cebolla.",
+        descriptionProduct: "Deliciosa hamburquesa con doble queso, carne de 100 libras...",
         price: "15.800$",
-        txtBtn: "Agregar"
+        likeIcon: "far fa-heart",
+        txtBtn: "Agregar",
+        backgroundBody:"#FFEADF",
+        backgroundFooter: "#FF7F40",
+        backgroundButton: "#802A00"
     },
     {
+        companyLogo: "fas fa-building",
+        companyName: "Nombre de la empresa",
         section: "fas fa-hamburger",
         image: "https://dam.cocinafacil.com.mx/wp-content/uploads/2019/03/pizza-gourmet-01.jpg",
         tagIcon: "fas fa-tag",
@@ -67,19 +105,29 @@ const ProductsData = [
         title: "Pizza gourmet",
         descriptionProduct: "Pizza saludable ideal para esas personas que cuidan su linea",
         price: "22.200$",
-        txtBtn: "Agregar"
+        likeIcon: "far fa-heart",
+        txtBtn: "Agregar",
+        backgroundBody:"#FFEADF",
+        backgroundFooter: "#FF7F40",
+        backgroundButton: "#802A00"
     },
     {
+        companyLogo: "fas fa-building",
+        companyName: "Nombre de la empresa",
         section: "fas fa-hamburger",
         image: "https://okdiario.com/img/2016/08/15/crepe-de-jamon-y-queso.jpg",
         tagIcon: "fas fa-tag",
         tagDescription: "Comidas",
         title: "Crepes de jamón y queso",
-        descriptionProduct: "Las crepes de jamón y queso son un clásico desayuno, merienda o cena rápida que nunca falla.",
+        descriptionProduct: "Las crepes de jamón y queso son un clásico desayuno, merienda o cena rápida.",
         price: "16.700$",
-        txtBtn: "Agregar"
-    },
-    {
+        likeIcon: "far fa-heart",
+        txtBtn: "Agregar",
+        backgroundBody:"#FFEADF",
+        backgroundFooter: "#FF7F40",
+        backgroundButton: "#802A00"
+    }
+    /* {
         section: "fas fa-hamburger",
         image: "https://jumboargentina.vteximg.com.br/arquivos/ids/593112-750-750/Helado-Sei-T-Palito-Bomb-n-390-Gr-1-36120.jpg?v=637303801182000000",
         tagIcon: "fas fa-tag",
@@ -188,7 +236,7 @@ const ProductsData = [
         descriptionProduct: "El Solomo o Lomo ancho está ubicado en el cuarto anterior del bovino, en la región dorsal y lumbar, es un corte blando con forma rectangular gruesa.",
         price: "7.900$",
         txtBtn: "Agregar"
-    }
+    } */
 ]
 
 export default ProductsData;

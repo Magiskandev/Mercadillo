@@ -1,5 +1,6 @@
 import React from 'react'
-import CardProducts from '../components/home/CardProducts.jsx'
+import CardProducts from '../components/home/CardProducts'
+
 
 function Home() {
   return (
