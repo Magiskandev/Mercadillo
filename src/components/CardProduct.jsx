@@ -9,7 +9,8 @@ function CardProduct (props){
         <>
       {/*   {ProductsData.map(props => {
         return ( */}
-        <Card style={{ width: '337px', height: '185px', marginLeft: '24px'}} 
+        <Card style={{ width: '337px', height: '236px', marginLeft: '24px',
+        marginBottom: '32px'}} 
         className="d-flex flex-column mt-5">
             <div className="">
 {/* //////////////////////Header Card////////////////////// */}
@@ -116,10 +117,11 @@ function CardProduct (props){
       </section>
   {/* //////////////////////Body////////////////////// */}
 
+  {/* //////////////////////Footer////////////////////// */}
   <div className="justify-content-center position-absolute d-flex
   justify-content-between px-3 align-items-center"
   style={{ width: '100%', height: '40px',
-  background: props.backgroundFooter, bottom: '-51px', borderBottomLeftRadius: '10px',
+  background: props.backgroundFooter, bottom: '0', borderBottomLeftRadius: '10px',
   borderBottomRightRadius: '10px'}}>
   <Card.Title
   style={{ color: '#EEECED',
@@ -133,8 +135,8 @@ fontSize: '14px'}}>
 fontWeight: 'bold',
 fontSize: '14px'}}>
     {props.price}</Card.Title>
-
   </div>
+{/* //////////////////////Footer////////////////////// */}
   </section>
 </Card>
 {/* )
