@@ -1,39 +1,42 @@
-import React from 'react'
-import Product from '../CardProduct'
-import ProductsData from '../../ProductsData'
+import React, {useState, useEffect} from 'react'
+import CardProduct from '../CardProduct'
+import axios from 'axios'
 
-const CardProducts = (props) => {
+const CardProducts = () => {
+const [products, setProducts] = useState([]);
+const [loading, setLoading] = useState(false);
+const [currentPage, setCurrentPage] = useState(1);
+const [productsPerPage, setProductsPerPage] = useState(9);
+
+
+useEffect(() => {
+    const fetchProducts = async () => {
+setLoading(true);
+const res = await axios.get('https://my-json-server.typicode.com/Tech-Code1/Products/products');
+setProducts(res.data);
+setLoading(false);
+    }
+
+    fetchProducts();
+}, [])
+
+/* Get current products */
+const indexOfLastProduct = currentPage * productsPerPage;
+const indexOfFirtsProduct = indexOfLastProduct - productsPerPage;
+const currentProducts = products.slice(indexOfFirtsProduct, indexOfLastProduct);
+
+
+
     return (
         <>
-        <section 
+        <section
         style={{width: '1500px'}}
-        className="container-fluid d-flex justify-content-center align-items-center
+        className="container-fluid d-flex
         flex-wrap h-auto">
 
-{ ProductsData.map((props, index) => {
-    return (
-        <div className="" >
-            <div className="">
-        <Product 
-        {...ProductsData[index]}
+        <CardProduct
+        products={currentProducts} loading={loading}
         />
-        </div>
-        </div>
-        )})};
-
-            {/* <article className="d-flex mb-5">
-            <Product {...ProductsData[0]}/>
-            <Product {...ProductsData[1]}/>
-            <Product {...ProductsData[2]}/>
-            <Product {...ProductsData[3]}/>
-            </article>
-
-            <article className="d-flex mb-5">
-            <Product {...ProductsData[4]}/>
-            <Product {...ProductsData[5]}/>
-            <Product {...ProductsData[6]}/>
-            <Product {...ProductsData[7]}/>
-            </article>  */}
             </section>
     </>
     )}

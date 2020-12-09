@@ -2,16 +2,20 @@ import React from 'react';
 import {Card} from 'react-bootstrap'
 import {Button} from 'react-bootstrap'
 
-function CardProduct (props){
+function CardProduct ({products, loading}){
 
+  if (loading) {
+    return <h2>Loading...</h2>;
+  }
 
     return (
         <>
-      {/*   {ProductsData.map(props => {
-        return ( */}
+      { products.map(product => (
+
+
         <Card style={{ width: '337px', height: '236px', marginLeft: '24px',
-        marginBottom: '32px'}} 
-        className="d-flex flex-column mt-5">
+        marginBottom: '32px'}}
+        className="mt-5" >
             <div className="">
 {/* //////////////////////Header Card////////////////////// */}
                   <div
@@ -34,7 +38,7 @@ function CardProduct (props){
                     className="d-flex
                     justify-content-center
                     align-items-center">
-                <i className={props.companyLogo}
+                <i className={product.companyLogo}
                 style={{
                   color: '#343232',
                   fontSize: '20px'
@@ -47,7 +51,7 @@ function CardProduct (props){
                     fontWeight: 'bold',
                     fontSize: '16px',
                     color: '#EEECED',
-                    }}>{props.companyName}</h3>
+                    }}>{product.companyName}</h3>
                   </div>
              
             <div
@@ -66,8 +70,8 @@ function CardProduct (props){
 {/* //////////////////////Image////////////////////// */}
             </div>
             <section className="d-flex "
-            style={{background: props.backgroundBody}}>
-  <Card.Img variant="top" src={props.image}
+            style={{background: product.backgroundBody}}>
+  <Card.Img variant="top" src={product.image}
   style={{ width: '135px', height: '145px',
   borderTopRightRadius:'24px', zIndex: '2'}}/>
   {/* //////////////////////Image////////////////////// */}
@@ -79,14 +83,14 @@ function CardProduct (props){
     align-items-center"
     style={{ width: '54px', height: '30px', left: '115px',
   borderBottomRightRadius:'10px', background: '#FFFFFF', top:'50px'}}>
-      <i className={props.tagIcon}
+      <i className={product.tagIcon}
       style={{ textAlign: 'right'}}></i>
     </div>
     <div className="position-absolute d-flex justify-content-center
     align-items-center"
     style={{ background: '#9E0059', width: '40px', height: '30px',
     right:0,  borderBottomLeftRadius: '10px'}}>
-      <i className={props.section}
+      <i className={product.section}
       style={{ color: '#EEECED'}}></i>
       </div>
       </div>
@@ -98,7 +102,7 @@ function CardProduct (props){
   style={{padding: '32px 16px 0', height: '80px'}}>
     <Card.Text style={{ fontSize: '12px', LineHeight: '14px',
   fontWeight: 'normal', fontFamily: 'Roboto, sans-serif'}}>
-      {props.descriptionProduct}
+      {product.descriptionProduct}
     </Card.Text>
     </Card.Body>
     <div className="d-flex justify-content-center align-items-center
@@ -107,12 +111,12 @@ function CardProduct (props){
             <i style={{ background: '#FFFFFF', height: '40px', width: '40px',
           borderRadius: '50%', verticalAlign: 'middle',
         display: 'flex', justifyContent: 'center', alignItems: 'center'}}
-          className={props.likeIcon}>
+          className={product.likeIcon}>
       </i>
     <Button variant="primary" className=""
-    style={{ background: props.backgroundButton, height: '40px', border: 'none',
+    style={{ background: product.backgroundButton, height: '40px', border: 'none',
     width: '125px', borderTopRightRadius: '0', borderBottomRightRadius: '0'}}>
-      {props.txtBtn}</Button>
+      {product.txtBtn}</Button>
       </div>
       </section>
   {/* //////////////////////Body////////////////////// */}
@@ -121,28 +125,28 @@ function CardProduct (props){
   <div className="justify-content-center position-absolute d-flex
   justify-content-between px-3 align-items-center"
   style={{ width: '100%', height: '40px',
-  background: props.backgroundFooter, bottom: '0', borderBottomLeftRadius: '10px',
+  background: product.backgroundFooter, bottom: '0', borderBottomLeftRadius: '10px',
   borderBottomRightRadius: '10px'}}>
   <Card.Title
   style={{ color: '#EEECED',
   fontFamily: 'Roboto, sans-serif',
 fontWeight: 'bold',
 fontSize: '14px'}}>
-    {props.title}</Card.Title>
+    {product.title}</Card.Title>
   <Card.Title
   style={{ color: '#EEECED',
   fontFamily: 'Roboto, sans-serif',
 fontWeight: 'bold',
 fontSize: '14px'}}>
-    {props.price}</Card.Title>
+    {product.price}</Card.Title>
   </div>
 {/* //////////////////////Footer////////////////////// */}
   </section>
 </Card>
-{/* )
-})} */}
+
+))}
+
 </>
-    )
-}
+)}
 
 export default CardProduct
