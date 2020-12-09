@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from 'react'
 import CardProduct from '../CardProduct'
+import Pagination from './Pagination'
 import axios from 'axios'
 
 const CardProducts = () => {
 const [products, setProducts] = useState([]);
 const [loading, setLoading] = useState(false);
 const [currentPage, setCurrentPage] = useState(1);
-const [productsPerPage, setProductsPerPage] = useState(9);
+const [productsPerPage] = useState(5);
 
 
 useEffect(() => {
@@ -25,7 +26,8 @@ const indexOfLastProduct = currentPage * productsPerPage;
 const indexOfFirtsProduct = indexOfLastProduct - productsPerPage;
 const currentProducts = products.slice(indexOfFirtsProduct, indexOfLastProduct);
 
-
+// Change page
+const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
     return (
         <>
@@ -37,6 +39,10 @@ const currentProducts = products.slice(indexOfFirtsProduct, indexOfLastProduct);
         <CardProduct
         products={currentProducts} loading={loading}
         />
+        <Pagination
+        productsPerPage={productsPerPage}
+        totalProducts={products.length}
+        paginate={paginate}/>
             </section>
     </>
     )}
