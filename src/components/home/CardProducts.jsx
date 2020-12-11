@@ -10,9 +10,9 @@ const CardProducts = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [productsPerPage] = useState(5);
     /* Product two */
-    const [productsTwo] = useState([]);
+    const [productsAccess] = useState(productsTwo);
     const [currentPageTwo, setCurrentPageTwo] = useState(1);
-    const [productsPerPageTwo] = useState(5);
+    const [productsPerPageTwo] = useState(4);
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -33,11 +33,11 @@ const CardProducts = () => {
     /* Get current products Two */
     const indexOfLastProductTwo = currentPageTwo * productsPerPageTwo;
     const indexOfFirtsProductTwo = indexOfLastProductTwo - productsPerPageTwo;
-    const currentProductsTwo = productsTwo.slice(indexOfFirtsProductTwo, indexOfLastProductTwo);
+    const currentProductsTwo = productsAccess.slice(indexOfFirtsProductTwo, indexOfLastProductTwo);
 
     // Change page
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
-    /*   const paginateTwo = (pageNumber) => setCurrentPageTwo(pageNumber); */
+    const paginateTwo = (pageNumberTwo) => setCurrentPageTwo(pageNumberTwo);
 
     return (
         <>
@@ -64,8 +64,8 @@ const CardProducts = () => {
                 />
                 <Pagination
                     productsPerPage={productsPerPageTwo}
-                    totalProducts={products.length}
-                    paginate={paginate} />
+                    totalProducts={productsAccess.length}
+                    paginate={paginateTwo} />
             </section>
         </>
     )
