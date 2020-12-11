@@ -12,7 +12,7 @@ const CardProducts = () => {
     /* Product two */
     const [productsAccess] = useState(productsTwo);
     const [currentPageTwo, setCurrentPageTwo] = useState(1);
-    const [productsPerPageTwo] = useState(4);
+    const [productsPerPageTwo] = useState(8);
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -42,18 +42,18 @@ const CardProducts = () => {
     return (
         <>
             <section
-                style={{ width: '1500px' }}
+                style={{ width: '1500px', height: '632px' }}
                 className="container-fluid d-flex
-        flex-wrap h-auto">
+        flex-wrap">
 
                 <CardProduct
                     products={currentProducts} loading={loading}
                 />
-                <Pagination
-                    productsPerPage={productsPerPage}
-                    totalProducts={products.length}
-                    paginate={paginate} />
             </section>
+            <Pagination
+                productsPerPage={productsPerPage}
+                totalProducts={products.length}
+                paginate={paginate} />
             <section
                 style={{ width: '1500px' }}
                 className="container-fluid d-flex
@@ -62,11 +62,11 @@ const CardProducts = () => {
                 <CardProduct
                     products={currentProductsTwo}
                 />
-                <Pagination
-                    productsPerPage={productsPerPageTwo}
-                    totalProducts={productsAccess.length}
-                    paginate={paginateTwo} />
             </section>
+            <Pagination
+                productsPerPage={productsPerPageTwo}
+                totalProducts={productsAccess.length}
+                paginate={paginateTwo} />
         </>
     )
 }

@@ -14,7 +14,8 @@ function CardProduct({ products, loading }) {
 
   return (
     <>
-      {[...products, ...productsTwo].map((product, productsTwo) => (
+      {products.map((product, productsTwo) => (
+
         <Card
           className="mt-5 card-product">
           {/* //////////////////////Header Card////////////////////// */}
