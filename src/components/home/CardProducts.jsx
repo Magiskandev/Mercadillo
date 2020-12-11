@@ -2,14 +2,17 @@ import React, { useState, useEffect } from 'react'
 import CardProduct from './CardProduct'
 import Pagination from './Pagination'
 import axios from 'axios'
-import accesProduct from './data/accessProduct'
+import productsTwo from './data/accessProduct'
 
-const CardProducts = () => {
+const CardProducts = ({ productsTwo }) => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const [productsPerPage] = useState(5);
-
+    /* Product two */
+    const [productsTwo] = useState([]);
+    const [currentPageTwo, setCurrentPageTwo] = useState(1);
+    const [productsPerPageTwo] = useState(5);
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -27,8 +30,14 @@ const CardProducts = () => {
     const indexOfFirtsProduct = indexOfLastProduct - productsPerPage;
     const currentProducts = products.slice(indexOfFirtsProduct, indexOfLastProduct);
 
+    /* Get current products Two */
+    const indexOfLastProductTwo = currentPageTwo * productsPerPageTwo;
+    const indexOfFirtsProductTwo = indexOfLastProductTwo - productsPerPageTwo;
+    const currentProductsTwo = productsTwo.slice(indexOfFirtsProductTwo, indexOfLastProductTwo);
+
     // Change page
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
+    /*   const paginateTwo = (pageNumber) => setCurrentPageTwo(pageNumber); */
 
     return (
         <>
@@ -51,10 +60,10 @@ const CardProducts = () => {
         flex-wrap h-auto">
 
                 <CardProduct
-                    products={currentProducts} loading={loading}
+                    productsTwo={productsTwo}
                 />
                 <Pagination
-                    productsPerPage={productsPerPage}
+                    productsPerPage={productsPerPageTwo}
                     totalProducts={products.length}
                     paginate={paginate} />
             </section>

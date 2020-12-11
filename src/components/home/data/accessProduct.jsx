@@ -161,3 +161,4 @@ const accessProduct = [
         "backgroundButton": "#001240"
     }
 ]
+export default accessProduct

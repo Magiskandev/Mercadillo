@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Card } from 'react-bootstrap'
 import { Button } from 'react-bootstrap'
-import accessProduct from './data/accessProduct'
+import productsTwo from './data/accessProduct'
 
 
 function CardProduct({ products, loading }) {
@@ -14,7 +14,7 @@ function CardProduct({ products, loading }) {
 
   return (
     <>
-      { products.map(product => (
+      {[...products, ...productsTwo].map((product, productsTwo) => (
         <Card
           className="mt-5 card-product">
           {/* //////////////////////Header Card////////////////////// */}
