@@ -1,11 +1,11 @@
 import React from 'react'
 
 const Pagination = ({ productsPerPage, totalProducts, paginate }) => {
-const pageNumbers = [];
+    const pageNumbers = [];
 
-for(let i = 1; i<= Math.ceil(totalProducts / productsPerPage); i++) {
-    pageNumbers.push(i)
-}
+    for (let i = 1; i <= Math.ceil(totalProducts / productsPerPage); i++) {
+        pageNumbers.push(i)
+    }
 
 
     return (
@@ -13,9 +13,9 @@ for(let i = 1; i<= Math.ceil(totalProducts / productsPerPage); i++) {
             <ul className="pagination">
                 {pageNumbers.map(number => (
                     <li key={number} className="page-item">
-                        <a onClick={() => paginate(number)} href='!#' className='page-link'>
+                        <bitton onClick={() => paginate(number)} className='page-link btn-paginate-products'>
                             {number}
-                        </a>
+                        </bitton>
                     </li>
                 ))}
             </ul>
