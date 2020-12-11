@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card } from 'react-bootstrap'
 import { Button } from 'react-bootstrap'
+import accessProduct from './data/accessProduct'
 
 
 function CardProduct({ products, loading }) {
+  /* const [accessProduct, setProductOne] = useState([])
+  const [products, setProductTwo] = useState(product) */
 
   if (loading) {
     return <h2>Loading...</h2>;
