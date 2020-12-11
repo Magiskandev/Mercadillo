@@ -4,7 +4,7 @@ import Pagination from './Pagination'
 import axios from 'axios'
 import productsTwo from './data/accessProduct'
 
-const CardProducts = ({ productsTwo }) => {
+const CardProducts = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
@@ -60,7 +60,7 @@ const CardProducts = ({ productsTwo }) => {
         flex-wrap h-auto">
 
                 <CardProduct
-                    productsTwo={productsTwo}
+                    products={currentProductsTwo}
                 />
                 <Pagination
                     productsPerPage={productsPerPageTwo}
