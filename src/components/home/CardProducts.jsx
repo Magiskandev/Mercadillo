@@ -41,6 +41,25 @@ const CardProducts = () => {
 
     return (
         <>
+            <div className="background-section-access d-flex flex-column justify-content-center">
+                <h1 className="title-principal-product-access position-relative">
+                    Una plataforma accesible para todos</h1>
+                <section
+                    style={{ width: '1500px' }}
+                    className="container-fluid d-flex
+        flex-wrap h-auto">
+
+
+                    <CardProduct
+                        products={currentProductsTwo}
+                    />
+                </section>
+                <Pagination
+                    productsPerPage={productsPerPageTwo}
+                    totalProducts={productsAccess.length}
+                    paginate={paginateTwo} />
+            </div>
+
             <section
                 style={{ width: '1500px', height: '632px' }}
                 className="container-fluid d-flex
@@ -54,19 +73,7 @@ const CardProducts = () => {
                 productsPerPage={productsPerPage}
                 totalProducts={products.length}
                 paginate={paginate} />
-            <section
-                style={{ width: '1500px' }}
-                className="container-fluid d-flex
-        flex-wrap h-auto">
 
-                <CardProduct
-                    products={currentProductsTwo}
-                />
-            </section>
-            <Pagination
-                productsPerPage={productsPerPageTwo}
-                totalProducts={productsAccess.length}
-                paginate={paginateTwo} />
         </>
     )
 }
