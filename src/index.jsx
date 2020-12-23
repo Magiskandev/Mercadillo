@@ -1,9 +1,10 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import Home from "./pages/Home.jsx";
+import React from "react"
+import ReactDOM from "react-dom"
+import Home from "./pages/Home.jsx"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './styles/index.scss'
-import Main from "./components/home/Main";
+import Main from "./components/home/Main"
+
 
 
 
