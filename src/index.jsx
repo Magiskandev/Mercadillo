@@ -3,13 +3,14 @@ import ReactDOM from "react-dom";
 import Home from "./pages/Home.jsx";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './styles/index.scss'
+import Main from "./components/home/Main";
 
 
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(
   <React.StrictMode>
-    <Home />
+    <Main/>
   </React.StrictMode>,
   rootElement
 );
