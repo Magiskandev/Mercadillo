@@ -33,7 +33,7 @@ export default class ProductForm extends Component{
     render(){
         return(
             <section >
-                <article className='col-6 card p-3 ml-2 mt-5'>
+                <article className='col-4 card p-3 ml-2 mt-5'>
                 <Form>
                     <Form.File 
                         id="imagen"
