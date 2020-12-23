@@ -6,17 +6,34 @@ export default class ProductForm extends Component{
     constructor(){
         super()
 
-        this.choices = this.choices.bind(this)
+        this.choices = this.choices.bind(this);
+        this.addProduct = this.addProduct.bind(this);
     }
 
 
     choices(e){
         document.getElementById('category').value = e.target.value;
     }
+    addProduct(e){
+        let data = {
+            product: 'Doraemon',
+            place: 'Mordekai',
+            category: 'Physics',
+            price: '$49.50'
+        }
+        fetch('https://pruebafiltro.tiagobg.repl.co/products', {
+            method: 'POST',
+            headers: {
+                'Content-Type' : 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+    }
     
     render(){
         return(
-            <section className='col-6 card p-3 ml-2 mt-5'>
+            <section >
+                <article className='col-6 card p-3 ml-2 mt-5'>
                 <Form>
                     <Form.File 
                         id="imagen"
@@ -40,7 +57,7 @@ export default class ProductForm extends Component{
                         <Dropdown.Item as="button" value='Physics' onClick={this.choices}>Physics</Dropdown.Item>
                         <Dropdown.Item as="button" value='Other' onClick={this.choices}>Other</Dropdown.Item>
                     </DropdownButton>
-                    <input type="dropdown" name='price' id='category' className='ml-2' style={{height: '35px', margin: '25px 0'}}/><br/>
+                    <input type="dropdown" name='price' id='category' className='ml-2 mt-4' style={{height: '35px'}}/><br/>
                 </div>
                 <Form>
                     <Form.Group controlId="formBasicRangeCustom">
@@ -48,7 +65,10 @@ export default class ProductForm extends Component{
                         <Form.Control type="range" custom />
                     </Form.Group>
                 </Form>
-                <Button>Nuevo producto</Button>
+                </article>
+                <Button className='m-3'>Nuevo producto</Button>
+                <Button className='m-3' onClick={this.addProduct}>Enviar</Button>
+
             </section>
         )
     }
