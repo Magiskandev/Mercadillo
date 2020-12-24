@@ -62,7 +62,7 @@ export default class ProductForm extends Component{
                 <Form>
                     <Form.Group controlId="formBasicRangeCustom">
                         <Form.Label>Define el descuento (si aplica)</Form.Label>
-                        <Form.Control type="range" custom />
+                        <Form.Control type="range" min={0} max={100} custom />
                     </Form.Group>
                 </Form>
                 </article>
