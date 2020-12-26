@@ -6,11 +6,11 @@ import SearchBar from '../components/home/SearchBar';
 
 function Home() {
   return (
-    <section>
-      <CarouselApp/>
-      <SearchBar/>
+    <section className="global-section-home">
+      <CarouselApp />
+      <SearchBar />
       <CardProducts />
-      <ProductRegister/>
+      <ProductRegister />
     </section>
   );
 }

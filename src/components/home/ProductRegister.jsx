@@ -41,6 +41,7 @@ export default class ProductForm extends Component{
         return(
             <section >
                 <article className='col-4 card p-3 ml-2 mt-5'>
+                    <label htmlFor="cantidad">Unidades Disponibles</label><input name='cantidad' type="number"/>
                 <Form>
                     <Form.File 
                         id="imagen"

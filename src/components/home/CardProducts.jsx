@@ -54,6 +54,7 @@ const CardProducts = () => {
                         products={currentProductsTwo}
                     />
                 </section>
+
                 <Pagination
                     productsPerPage={productsPerPageTwo}
                     totalProducts={productsAccess.length}
@@ -61,14 +62,15 @@ const CardProducts = () => {
             </div>
 
             <section
-                style={{ width: '1500px', height: '632px' }}
+                style={{ width: '1500px' }}
                 className="container-fluid d-flex
-        flex-wrap">
+        flex-wrap h-auto">
 
                 <CardProduct
                     products={currentProducts} loading={loading}
                 />
             </section>
+
             <Pagination
                 productsPerPage={productsPerPage}
                 totalProducts={products.length}
