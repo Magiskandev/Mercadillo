@@ -1,6 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import {DropdownButton, Dropdown, Button, Form,  FormControl} from "react-bootstrap";
+import { DropdownButton, Dropdown, Button, Form, FormControl } from "react-bootstrap";
 
 
 export default class SearchBar extends React.Component {
@@ -11,7 +11,7 @@ export default class SearchBar extends React.Component {
   clickBuscar(e) {
     document.getElementById('buscar').value = e.target.value;
   }
-  clickOpcionar(){
+  clickOpcionar() {
     console.log('')
   }
   render() {
@@ -39,7 +39,7 @@ export default class SearchBar extends React.Component {
             <Button className="mx-2 btn btn-info rounded-pill" value='Opcion D' onClick={this.clickBuscar}>Opcion D</Button>
           </div>
         </div>
-        <div className="col-2">
+        <div className="col-1 p-0">
           <DropdownButton id="dropdown-item-button" title="Filtrar">
             <Dropdown.ItemText>Escoja una opcion:</Dropdown.ItemText>
             <Dropdown.Item as="button">Precio: De menor a mayor</Dropdown.Item>
