@@ -5,7 +5,9 @@ import {DropdownButton, Dropdown, Button, Form,  FormControl} from "react-bootst
 export default class ProductForm extends Component{
     constructor(){
         super()
-
+        this.state = {
+            value: 0
+          };
         this.choices = this.choices.bind(this);
         this.addProduct = this.addProduct.bind(this);
     }
@@ -31,6 +33,11 @@ export default class ProductForm extends Component{
     }
     
     render(){
+        const handleChange = (e) => {
+            this.setState({ value: e.target.value }, () => {
+              document.getElementById("slider").value = this.state.value;
+            });
+          };
         return(
             <section >
                 <article className='col-4 card p-3 ml-2 mt-5'>
@@ -57,12 +64,13 @@ export default class ProductForm extends Component{
                         <Dropdown.Item as="button" value='Physics' onClick={this.choices}>Physics</Dropdown.Item>
                         <Dropdown.Item as="button" value='Other' onClick={this.choices}>Other</Dropdown.Item>
                     </DropdownButton>
-                    <input type="dropdown" name='price' id='category' className='ml-2 mt-4' style={{height: '35px'}}/><br/>
+                    <input type="dropdown" name='price' id='category' className='ml-2 mt-4 col-5' disabled style={{height: '35px' , color: 'black'}}/><br/>
                 </div>
-                <Form>
+                <Form className='my-3'>
                     <Form.Group controlId="formBasicRangeCustom">
-                        <Form.Label>Define el descuento (si aplica)</Form.Label>
-                        <Form.Control type="range" custom />
+                        <Form.Label>Define el descuento % (si aplica)</Form.Label>
+                        <Form.Control type="range" max="100" value={this.state.value} onChange={handleChange} step="1" custom />
+                        <input type="text" id="slider" min="0" max="100" className='col-3' disabled style={{color: 'black'}}/>
                     </Form.Group>
                 </Form>
                 </article>
