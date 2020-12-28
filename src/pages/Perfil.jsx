@@ -1,12 +1,12 @@
-import {Component} from 'react';
+import { Component } from 'react';
 import ProductRegister from '../components/perfil/ProductRegister'
 
-export default class Perfil extends Component{
-    render(){
-        return(
+export default class Perfil extends Component {
+    render() {
+        return (
             <section className="global-section-home">
                 <div className='ml-5'>
-                    <ProductRegister/>
+                    <ProductRegister />
                 </div>
             </section>
         )
