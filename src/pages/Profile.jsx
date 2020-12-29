@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import ProductRegister from '../components/perfil/ProductRegister'
+import ProductRegister from '../components/profile/ProductRegister'
 
 export default class Profile extends Component {
     render() {

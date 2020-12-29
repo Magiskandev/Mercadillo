@@ -7,7 +7,8 @@ export default class ProductForm extends Component{
     constructor(){
         super()
         this.state = {
-            value: 0
+            value: 0,
+            products: []
           };
         this.choices = this.choices.bind(this);
         this.addProduct = this.addProduct.bind(this);
@@ -20,7 +21,7 @@ export default class ProductForm extends Component{
     addProduct(e){
         let data = {
             product: 'Doraemon',
-            place: 'Mordekai',
+            place: 'Mordecai',
             category: 'Physics',
             price: '$49.50'
         }
@@ -31,6 +32,30 @@ export default class ProductForm extends Component{
             },
             body: JSON.stringify(data)
         })
+        .then((response)=> response.json())
+        .then((data)=>{
+            alert(`Se añade el producto ${data.product} con id: ${data.id} `)
+            this.loadProductsData()
+        })
+    }
+
+    loadProductsData=()=>{
+        fetch('https://pruebafiltro.tiagobg.repl.co/products')
+        .then((response)=>{
+            return response.json()
+        })
+        .then((data)=>{
+            this.setState({
+                products: data
+            })
+        })
+        .catch((error)=>{
+            console.log(error)
+        })
+    }
+
+    componentDidMount(){
+        this.loadProductsData()
     }
     
     render(){
@@ -105,15 +130,36 @@ export default class ProductForm extends Component{
                             <input type="text" id="slider" min="0" max="100" className='col-3' disabled style={{color: 'black'}}/>
                         </Form.Group>
                     </Form>
-                </div>
-                
-
-                
+                    
+                </div>                   
 
                 <label htmlFor="description">Agrega la descripción del producto:</label><textarea name='description' type="text"/>
                 </article>
                 <Button className='m-3'>Nuevo producto</Button>
                 <Button className='m-3' onClick={this.addProduct}>Enviar</Button>
+
+                <div>
+                    <table>
+                        <thead>
+                            <th>
+                                <td>Name</td>
+                                <td>Place</td>
+                                <td>Price</td>
+                                <td>Category</td>
+                            </th>
+                        </thead>
+                        <tbody>                                
+                            {this.state.products.map((item, i)=> {
+                                return <tr key={i}>
+                                    <td>{item.product}</td>
+                                    <td>{item.place}</td>
+                                    <td>{item.price}</td>
+                                    <td>{item.category}</td>
+                                </tr>
+                            })}                                
+                        </tbody>
+                    </table>
+                </div>
 
             </section>
         )
