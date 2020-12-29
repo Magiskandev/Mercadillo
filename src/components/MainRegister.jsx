@@ -29,20 +29,28 @@ class MainFormularioRegistro extends Component {
         this.passwordChange = this.passwordChange.bind(this);
     }
 
-    async inputChange(e) {
-        await this.setState({
+    inputChange(e) {
+        console.log(e)
+
+        const target = e.target;
+        const value = target.type === 'password' ? md5(target.value) : target.value;
+        const name = target.name;
+    
+
+        this.setState({
             form: {
-                [e.target.name]: e.target.value
+                ...this.state.form,
+                [name]: value,
             }
         });
+
         console.log(this.state.form)
     }
 
     async passwordChange(e) {
-        let pass = md5(e.target.value);
         await this.setState({
             form: {
-                password: pass
+
             }
         });
         console.log(this.state.form)
@@ -103,7 +111,7 @@ class MainFormularioRegistro extends Component {
                                 </Form.Group>
                                 <Form.Group controlId="formBasicPassword">
                                     <Form.Label>Contraseña</Form.Label>
-                                    <Form.Control type="password" name='password' placeholder="Tu contraseña" onChange={this.passwordChange} />
+                                    <Form.Control type="password" name='password' placeholder="Tu contraseña" onChange={this.inputChange} />
                                 </Form.Group>
                                 {/*<Form.Group controlId="formBasicCheckbox">
                         <Form.Check type="checkbox" label="Recordar" onChange={this.changeInput} />

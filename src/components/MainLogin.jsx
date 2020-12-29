@@ -63,7 +63,6 @@ class MainLogin extends Component {
                     )
 
                 } else {
-                    //alert('El usuario o la contraseña no son correctos');
                     Sa2.fire(
                         '¡Tu Usuario o Contraseña es incorrecto!',
                         'Inténtalo de nuevo',
