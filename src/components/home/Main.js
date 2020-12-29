@@ -1,10 +1,8 @@
 import React from 'react';
-import { Router, Switch, BrowserRouter, NavLink, Route, HashRouter } from 'react-router-dom';
-import CardProducts from './CardProducts';
-import CarouselApp from './CarouselApp';
+import { NavLink, Route, HashRouter } from 'react-router-dom';
 import Home from '../../pages/Home';
 import Perfil from '../../pages/Perfil';
-import Productos from '../../pages/Productos';
+import Products from '../../pages/Products';
 import Soporte from '../../pages/Soporte';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -53,7 +51,7 @@ export default function Main() {
                 <div className='content'>
                     <Route exact path='/' component={Home} />
                     <Route path='/perfil' component={Perfil} />
-                    <Route path='/productos' component={Productos} />
+                    <Route path='/productos' component={Products} />
                     <Route path='/soporte' component={Soporte} />
                 </div>
             </section>
