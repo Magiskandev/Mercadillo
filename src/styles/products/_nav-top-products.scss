@@ -1,5 +1,5 @@
 .content-section-nav {
-    height: 376px;
+    height: 320px;
     width: 100%;
     background: #F9EDCC;
     
@@ -41,7 +41,8 @@
     background: #FDFDFD;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    left: 900px;
+    left: 1195px;
+    z-index: 1000;
     top: 0;
 }
 
@@ -54,7 +55,7 @@
     font-family: Open Sans;
 font-style: normal;
 font-weight: bold;
-font-size: 28px;
+font-size: 24px;
 width: 677px;
 }
 
@@ -98,12 +99,20 @@ font-weight: bold;
 font-size: 24px;
 color: #FDFDFD;
 margin-left: 60px;
+
+&:hover {
+    background: #E1520F;
+}
 }
 
 .content-search-and-btn-nav {
-    margin-top: 120px !important;
+    margin-top: 70px !important;
 }
 
 .content-margin-bottom {
     bottom: 70px;
+}
+
+.company-logo-style {
+    top: 60px;
 }
