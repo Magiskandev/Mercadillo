@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
-import classnames from 'classnames';
+import { TabContent, TabPane, Nav, NavItem } from 'reactstrap';
+
 import InfoTabOne from './InfoTabOne'
 import InfoTabTwo from './InfoTabTwo'
+import InfoTabThree from './InfoTabThree'
 import IconTabOne from '../../images/svg/icon-tab-info-home-one.svg'
 import IconTabTwo from '../../images/svg/icon-tab-info-home-two.svg'
 import IconTabThree from '../../images/svg/icon-tab-info-home-three.svg'
@@ -78,11 +79,7 @@ function HomeInfoMaster() {
 
           </TabPane>
           <TabPane tabId="3">
-            <h1>hola dos</h1>
-            <h1>hola dos</h1>
-            <h1>hola dos</h1>
-            <h1>hola dos</h1>
-            <h1>hola dos</h1>
+            <InfoTabThree />
           </TabPane>
           <TabPane tabId="4">
             <h1>Adios</h1>

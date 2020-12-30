@@ -94,9 +94,14 @@ width: 574px;
     left: 445.5px;
 }
 
-.vineta-tab-two-style, 
+.vineta-tab-two-style,
+.vineta-tab-three-style,
 .vineta-tab-style {
     bottom: 392px;
+}
+
+.vineta-tab-three-style {
+    left: 1045.5px;
 }
 
 .vineta-tab-two-style {
@@ -143,9 +148,7 @@ color: #FDFDFD;
 .hover-subcategory-info {
     height: 99px;
     width: 115px;
-    
     border-radius: 5px;
-    
     z-index: 1;
 }
 
@@ -179,4 +182,17 @@ color: #FDFDFD;
 
 .subcategories-line-three-other-style {
     margin-top: 125px !important;
+}
+
+.title-style-tab-info-three {
+    font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+width: 316px;
+color: #2C2C2C;
+}
+
+.content-icons-tab-three {
+    width: 1200px;
 }
