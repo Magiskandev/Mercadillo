@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
 import InfoTabOne from './InfoTabOne'
+import InfoTabTwo from './InfoTabTwo'
 import IconTabOne from '../../images/svg/icon-tab-info-home-one.svg'
 import IconTabTwo from '../../images/svg/icon-tab-info-home-two.svg'
 import IconTabThree from '../../images/svg/icon-tab-info-home-three.svg'
@@ -73,10 +74,8 @@ function HomeInfoMaster() {
             </section>
           </TabPane >
           <TabPane tabId="2">
-            <h1>hola</h1>
-            <h1>hola</h1>
-            <h1>hola</h1>
-            <h1>hola</h1>
+            <InfoTabTwo />
+
           </TabPane>
           <TabPane tabId="3">
             <h1>hola dos</h1>
