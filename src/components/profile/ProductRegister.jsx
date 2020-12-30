@@ -2,25 +2,38 @@ import React from 'react';
 import {Component } from 'react';
 import {DropdownButton, Dropdown, Button, Form} from "react-bootstrap";
 
+
+
 export default class ProductForm extends Component{
+    
     constructor(){
         super()
         this.state = {
             value: 0,
-            products: []
+            products: [{
+                
+            }]
           };
         this.addProduct = this.addProduct.bind(this);
+
     }
+
+  
 
    /*  choices(e){
         document.getElementById('category').value = e.target.value;
     } */
     addProduct(e){
+        const productName = document.getElementById('product-name');
+        const productCompany = document.getElementById('product-company');
+        const productCategory = document.getElementById('product-category');
+        const productPrice = document.getElementById('product-price');
+
         let data = {
-            product: 'Doraemon',
-            place: 'Mordecai',
-            category: 'Physics',
-            price: '$49.50'
+            product: productName.value,
+            place: productCompany.value,
+            category: productCategory.value,
+            price: productPrice.value
         }
         fetch('https://pruebafiltro.tiagobg.repl.co/products', {
             method: 'POST',
@@ -36,17 +49,17 @@ export default class ProductForm extends Component{
         })
     }
 
-    editProduct = ()=>{
-        let  availableUnits = document.getElementById('available-units');
-        let  productName = document.getElementById('product-name');
-        let  productCompany = document.getElementById('product-company');
-        let productImages = document.getElementById('product-images');
-        let productCategory = document.getElementById('product-category');
-        let productSubcategory = document.getElementById('product-subcategory');
-        let productPrice = document.getElementById('product-price');
-        let addDiscount = document.getElementById('price-switch');
-        let productDescription = document.getElementById('product-description');
-
+    editProduct = ()=>{        
+        const availableUnits = document.getElementById('available-units');
+        const productName = document.getElementById('product-name');
+        const productCompany = document.getElementById('product-company');
+        const productImages = document.getElementById('product-images');
+        const productCategory = document.getElementById('product-category');
+        const productSubcategory = document.getElementById('product-subcategory');
+        const productPrice = document.getElementById('product-price');
+        const addDiscount = document.getElementById('price-switch');
+        const productDescription = document.getElementById('product-description');
+        
         const productInputs = [availableUnits, productName, productCompany, productImages, productCategory, productSubcategory, productPrice, addDiscount, productDescription]
 
         productInputs.forEach(element =>{
@@ -113,12 +126,12 @@ export default class ProductForm extends Component{
                                 custom
                                 disabled
                             />
-                        </Form><br/>
+                        </Form><br/>                        
 
                         <label htmlFor="product">Ingresa el nombre de tu producto: </label>
-                        <input type="text" name='product' id='product-name' disabled/><br/>
+                        <input type="text" name='product' id='product-name' className='col-8' disabled/><br/>
                         <label htmlFor="company">Ingresa el nombre de la compañía: </label>
-                        <input type="text" name='company' id='product-company' disabled/><br/>
+                        <input type="text" name='company' id='product-company' className='col-8' disabled/><br/>                                   
                     
                         <div className="d-flex my-3 mb-2">
                             <div className='d-flex mr-2'>
