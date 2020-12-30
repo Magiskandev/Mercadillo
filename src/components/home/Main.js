@@ -1,9 +1,9 @@
 import React from 'react';
 import { NavLink, Route, HashRouter } from 'react-router-dom';
 import Home from '../../pages/Home';
-import Perfil from '../../pages/Perfil';
+import Profile from '../../pages/Profile';
 import Products from '../../pages/Products';
-import Soporte from '../../pages/Soporte';
+import Support from '../../pages/Support';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Main() {
@@ -50,9 +50,9 @@ export default function Main() {
                 </ul>
                 <div className='content'>
                     <Route exact path='/' component={Home} />
-                    <Route path='/perfil' component={Perfil} />
+                    <Route path='/perfil' component={Profile} />
                     <Route path='/productos' component={Products} />
-                    <Route path='/soporte' component={Soporte} />
+                    <Route path='/soporte' component={Support} />
                 </div>
             </section>
         </HashRouter>

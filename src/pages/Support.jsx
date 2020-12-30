@@ -1,6 +1,6 @@
 import {Component} from 'react';
 
-export default class Soporte extends Component{
+export default class Support extends Component{
     render(){
         return(
             <section>
