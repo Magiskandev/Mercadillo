@@ -11,7 +11,10 @@ export default class PersonalInfo extends Component{
         let nameInput = document.getElementById('user-name');
         let lastnameInput = document.getElementById('user-lastname');
         let birthDateInput = document.getElementById('user-birthdate');
-        
+
+        let formInputs = [emailInput, rolInput, nameInput, lastnameInput, birthDateInput]
+
+       
        if(emailInput.hasAttribute('disabled') && rolInput.hasAttribute('disabled') && nameInput.hasAttribute('disabled') && lastnameInput.hasAttribute('disabled') && birthDateInput.hasAttribute('disabled')){
            emailInput.removeAttribute('disabled');
            rolInput.removeAttribute('disabled');
