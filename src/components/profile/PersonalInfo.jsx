@@ -11,37 +11,32 @@ export default class PersonalInfo extends Component{
         let nameInput = document.getElementById('user-name');
         let lastnameInput = document.getElementById('user-lastname');
         let birthDateInput = document.getElementById('user-birthdate');
+        let paymentInput = document.getElementById('payment-input');
 
-        let formInputs = [emailInput, rolInput, nameInput, lastnameInput, birthDateInput]
+        let formInputs = [emailInput, rolInput, nameInput, lastnameInput, birthDateInput, paymentInput]
 
-       
-       if(emailInput.hasAttribute('disabled') && rolInput.hasAttribute('disabled') && nameInput.hasAttribute('disabled') && lastnameInput.hasAttribute('disabled') && birthDateInput.hasAttribute('disabled')){
-           emailInput.removeAttribute('disabled');
-           rolInput.removeAttribute('disabled');
-           nameInput.removeAttribute('disabled');
-           lastnameInput.removeAttribute('disabled');
-           birthDateInput.removeAttribute('disabled');
-
-       }else{
-           emailInput.setAttribute('disabled',"");
-           rolInput.setAttribute('disabled',"");
-           nameInput.setAttribute('disabled',"");
-           lastnameInput.setAttribute('disabled', "");
-           birthDateInput.setAttribute('disabled', "");
-       }  
+       formInputs.forEach(item => {
+           if(item.hasAttribute('disabled')){
+               item.removeAttribute('disabled');
+           }else{
+               item.setAttribute('disabled', "");
+           }
+       });      
     }
 
     changePassword = ()=>{
         let passwordInput = document.getElementById('user-password')
         let passwordConfirmation = document.getElementById('confirm-password')
 
-        if(passwordInput.hasAttribute('disabled') && passwordConfirmation.hasAttribute('disabled')){
-            passwordInput.removeAttribute('disabled');
-            passwordConfirmation.removeAttribute('disabled');
-        }else{
-            passwordInput.setAttribute('disabled',"");
-            passwordConfirmation.setAttribute('disabled',"");
-        }
+        let passwordsFields = [passwordInput, passwordsFields]
+
+        passwordsFields.forEach(item =>{
+            if(item.hasAttribute('disabled')){
+                item.removeAttribute('disabled');
+            }else{
+                item.setAttribute('disabled', "");
+            }
+        });        
     }
 
     render(){
@@ -93,7 +88,19 @@ export default class PersonalInfo extends Component{
                                 <Form.Label>Ingresa tu fecha de nacimiento:</Form.Label>
                                 <Form.Control type="date" id='user-birthdate' disabled/>
                             </div>                    
-                        </div>               
+                        </div>  
+                        <div className="row">
+                        <div className="col-5">
+                                <Form.Group controlId="exampleForm.ControlSelect1">
+                                    <Form.Label>Selecciona tu método de pago:</Form.Label>
+                                    <Form.Control as="select" id='payment-input' disabled>
+                                        <option>Débito</option>
+                                        <option>Crédito</option>
+                                        <option>Efectivo</option>                       
+                                    </Form.Control>
+                                </Form.Group>
+                            </div>
+                        </div>             
                     </Form.Group>
                                        
                 </Form>               
