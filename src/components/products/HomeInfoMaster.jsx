@@ -6,6 +6,7 @@ import IconTabOne from '../../images/svg/icon-tab-info-home-one.svg'
 import IconTabTwo from '../../images/svg/icon-tab-info-home-two.svg'
 import IconTabThree from '../../images/svg/icon-tab-info-home-three.svg'
 import IconTabFour from '../../images/svg/icon-tab-info-home-four.svg'
+import ShoperMan from '../../images/svg/Shoper man.svg'
 
 function HomeInfoMaster() {
   const [activeTab, setActiveTab] = useState('1');
@@ -17,6 +18,8 @@ function HomeInfoMaster() {
   return (
     <section className="content-section-body-info-home d-flex justify-content-end 
     position-relative">
+
+      <img src={ShoperMan} alt="" className="mr-5 shoperman-style" />
       <div className="content-global-info-tab">
         <Nav tabs>
           <NavItem>
