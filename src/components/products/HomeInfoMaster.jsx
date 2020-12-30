@@ -4,6 +4,7 @@ import { TabContent, TabPane, Nav, NavItem } from 'reactstrap';
 import InfoTabOne from './InfoTabOne'
 import InfoTabTwo from './InfoTabTwo'
 import InfoTabThree from './InfoTabThree'
+import InfoTabFour from './InfoTabFour'
 import IconTabOne from '../../images/svg/icon-tab-info-home-one.svg'
 import IconTabTwo from '../../images/svg/icon-tab-info-home-two.svg'
 import IconTabThree from '../../images/svg/icon-tab-info-home-three.svg'
@@ -82,11 +83,7 @@ function HomeInfoMaster() {
             <InfoTabThree />
           </TabPane>
           <TabPane tabId="4">
-            <h1>Adios</h1>
-            <h1>Adios</h1>
-            <h1>Adios</h1>
-            <h1>Adios</h1>
-            <h1>Adios</h1>
+            <InfoTabFour />
           </TabPane>
         </TabContent >
       </div >

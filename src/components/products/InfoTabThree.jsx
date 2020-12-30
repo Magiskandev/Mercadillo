@@ -5,7 +5,7 @@ import Vineta from '../../images/svg/viñeta.svg'
 
 function InfoiTabThree() {
     return (
-        <section className="">
+        <section>
             <img src={Vineta} alt="" className="position-absolute vineta-tab-three-style" />
             <h2 className="title-style-tab-info-three mt-4 pl-4 position-absolute">
                 Sistema de calificación, para siempre recomendarte lo mejor</h2>

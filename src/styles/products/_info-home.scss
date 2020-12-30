@@ -96,17 +96,24 @@ width: 574px;
 
 .vineta-tab-two-style,
 .vineta-tab-three-style,
+.vineta-tab-four-style,
 .vineta-tab-style {
     bottom: 392px;
+}
+
+.vineta-tab-two-style {
+    left: 745.5px;
 }
 
 .vineta-tab-three-style {
     left: 1045.5px;
 }
 
-.vineta-tab-two-style {
-    left: 745.5px;
+.vineta-tab-four-style {
+    left: 1345.5px;
 }
+
+
 
 .subcatergory-content {
     width: 108px;
@@ -194,5 +201,18 @@ color: #2C2C2C;
 }
 
 .content-icons-tab-three {
+    width: 1200px;
+}
+
+.paragraph-tab-four-style {
+    font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+color: #2C2C2C;
+width: 328px;
+}
+
+.content-tab-four-info-home {
     width: 1200px;
 }
