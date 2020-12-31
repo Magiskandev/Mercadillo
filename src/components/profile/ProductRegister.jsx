@@ -28,12 +28,21 @@ export default class ProductForm extends Component{
         const productCompany = document.getElementById('product-company');
         const productCategory = document.getElementById('product-category');
         const productPrice = document.getElementById('product-price');
+        const availableUnits = document.getElementById('available-units');
+        const setDiscount = document.getElementById('set-discount');
+        const productSubcategory = document.getElementById('product-subcategory');
+        const productDescription = document.getElementById('product-description');
 
         let data = {
-            product: productName.value,
-            place: productCompany.value,
+            name: productName.value,
+            company: productCompany.value,
             category: productCategory.value,
-            price: productPrice.value
+            price: productPrice.value,
+            quantity: availableUnits.value,
+            discount: setDiscount.value,
+            subcategory: productSubcategory.value,
+            description: productDescription.value
+
         }
         fetch('https://pruebafiltro.tiagobg.repl.co/products', {
             method: 'POST',
@@ -46,6 +55,7 @@ export default class ProductForm extends Component{
         .then((data)=>{
             alert(`Se añade el producto ${data.product} con id: ${data.id} `)
             this.loadProductsData()
+            this.editProduct()
         })
     }
 
@@ -72,7 +82,7 @@ export default class ProductForm extends Component{
         
     }
     setDiscountSlider = ()=>{
-        let setDiscount = document.getElementById('set-discount');
+        const setDiscount = document.getElementById('set-discount');
 
         if(setDiscount.hasAttribute('disabled')){
             setDiscount.removeAttribute('disabled');
@@ -186,22 +196,33 @@ export default class ProductForm extends Component{
                 <Button className='m-3' onClick={this.addProduct}>Enviar</Button>
 
                 <div>
-                    <table>
+                    <table className='table-striped table-bordered table-hover col-11'>
                         <thead>
-                            <th>
-                                <td>Name</td>
-                                <td>Place</td>
-                                <td>Price</td>
-                                <td>Category</td>
-                            </th>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Precio</th>
+                                <th scope="col">Cantidad</th>                                
+                                <th scope="col">Compañia</th>
+                                <th scope="col">Categoría</th>
+                                <th scope="col">Subcategoría</th>
+                                <th scope="col">Descuento</th>
+                                <th scope="col">Descripción</th>                                
+                            </tr>
                         </thead>
                         <tbody>                                
                             {this.state.products.map((item, i)=> {
                                 return <tr key={i}>
-                                    <td>{item.product}</td>
-                                    <td>{item.place}</td>
+                                    <td>{item.id}</td>
+                                    <td>{item.name}</td>
                                     <td>{item.price}</td>
+                                    <td>{item.quantity}</td>
+                                    <td>{item.company}</td>                                    
                                     <td>{item.category}</td>
+                                    <td>{item.subcategory}</td>
+                                    <td>{item.discount}</td>
+                                    <td>{item.description}</td>
+
                                 </tr>
                             })}                                
                         </tbody>
