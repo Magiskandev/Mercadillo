@@ -16,13 +16,21 @@ export default class ProductForm extends Component{
           };
         this.addProduct = this.addProduct.bind(this);
 
-    }
-
-  
+    }  
 
    /*  choices(e){
         document.getElementById('category').value = e.target.value;
     } */
+    sortForPrice = ()=>{
+        // this.loadProductsData();
+        const sortPrice = this.state.products.sort((a,b) => {
+            if (a.price > b.price) return 1;
+            if (a.price < b.price) return -1;
+
+            return 0;
+        });
+        console.log(sortPrice);
+    }
     addProduct(e){
         const productName = document.getElementById('product-name');
         const productCompany = document.getElementById('product-company');
@@ -192,7 +200,7 @@ export default class ProductForm extends Component{
                     </div>
                 </article>
 
-                <Button className='m-3'>Nuevo producto</Button>
+                <Button className='m-3' onClick={this.sortForPrice}>Ordenar por precio</Button>
                 <Button className='m-3' onClick={this.addProduct}>Enviar</Button>
 
                 <div>
