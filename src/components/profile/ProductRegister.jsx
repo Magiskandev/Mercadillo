@@ -1,6 +1,6 @@
 import React from 'react';
 import {Component } from 'react';
-import {DropdownButton, Dropdown, Button, Form} from "react-bootstrap";
+import {Button, Form} from "react-bootstrap";
 
 
 
@@ -40,6 +40,7 @@ export default class ProductForm extends Component{
         const setDiscount = document.getElementById('set-discount');
         const productSubcategory = document.getElementById('product-subcategory');
         const productDescription = document.getElementById('product-description');
+        const productImages = document.getElementById('product-images');
 
         let data = {
             name: productName.value,
@@ -49,7 +50,8 @@ export default class ProductForm extends Component{
             quantity: availableUnits.value,
             discount: setDiscount.value,
             subcategory: productSubcategory.value,
-            description: productDescription.value
+            description: productDescription.value,
+            image: productImages
 
         }
         fetch('https://pruebafiltro.tiagobg.repl.co/products', {
@@ -97,7 +99,7 @@ export default class ProductForm extends Component{
         }else{
             setDiscount.setAttribute('disabled', "");
         }
-        console.log(setDiscount.disabled)
+        // console.log(setDiscount.disabled)
     }
     loadProductsData=()=>{
         fetch('https://pruebafiltro.tiagobg.repl.co/products')
@@ -138,13 +140,10 @@ export default class ProductForm extends Component{
                         </div>
                         
                         <Form>
-                            <Form.File 
-                               id='product-images'
-                                label="Agregar fotos"
-                                custom
-                                disabled
-                            />
-                        </Form><br/>                        
+                            <Form.Group>
+                                <Form.File id='product-images' label="Agrega la imagen de tu producto" disabled />
+                            </Form.Group>
+                        </Form><br/>                    
 
                         <label htmlFor="product">Ingresa el nombre de tu producto: </label>
                         <input type="text" name='product' id='product-name' className='col-8' disabled/><br/>
@@ -215,7 +214,8 @@ export default class ProductForm extends Component{
                                 <th scope="col">Categoría</th>
                                 <th scope="col">Subcategoría</th>
                                 <th scope="col">Descuento</th>
-                                <th scope="col">Descripción</th>                                
+                                <th scope="col">Descripción</th>  
+                                <th scope='col'>Images</th>                              
                             </tr>
                         </thead>
                         <tbody>                                
@@ -230,6 +230,7 @@ export default class ProductForm extends Component{
                                     <td>{item.subcategory}</td>
                                     <td>{item.discount}</td>
                                     <td>{item.description}</td>
+                                    <td>{item.image}</td>
 
                                 </tr>
                             })}                                
