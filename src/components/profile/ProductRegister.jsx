@@ -29,7 +29,7 @@ export default class ProductForm extends Component{
 
             return 0;
         });
-        console.log(sortPrice);
+        console.table(sortPrice);
     }
     addProduct(e){
         const productName = document.getElementById('product-name');
