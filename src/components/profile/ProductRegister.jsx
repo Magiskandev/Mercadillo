@@ -216,6 +216,7 @@ export default class ProductForm extends Component{
                                 <th scope="col">Categoría</th>
                                 <th scope="col">Subcategoría</th>
                                 <th scope="col">Descuento</th>
+                                <th scope='col'>Precio Final</th>
                                 <th scope="col">Descripción</th>  
                                 <th scope='col'>Images</th>                              
                             </tr>
@@ -230,7 +231,8 @@ export default class ProductForm extends Component{
                                     <td>{item.company}</td>                                    
                                     <td>{item.category}</td>
                                     <td>{item.subcategory}</td>
-                                    <td>{item.discount}</td>
+                                    <td>{item.discount}%</td>
+                                    <td>{new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP' }).format(item.price -= item.price*(item.discount/100))}</td>
                                     <td>{item.description}</td>
                                     <td>{item.image}</td>
 
