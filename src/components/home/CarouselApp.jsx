@@ -3,10 +3,13 @@ import { Carousel, Card, CardDeck, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default class CarouselApp extends React.Component {
+  constructor(props){
+    super(props)
+  }
   render() {
     return (
       <section className='container-fluid my-4'>
-        <h2 className='my-3'>Promociones</h2>
+        <h2 className='my-3'>{this.props.title}</h2>
         <Carousel>
           <Carousel.Item>
             <CardDeck>

@@ -7,7 +7,8 @@ export default class Products extends Component {
     render() {
         return (
             <section className="global-section-home">
-                <CarouselApp />
+                <CarouselApp title={"Promociones"}/>
+                <CarouselApp title={"Los más buscados"}/>
                 <SearchBar />
                 <CardProducts />
             </section>

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Component } from 'react';
-import {DropdownButton, Dropdown, Button, Form} from "react-bootstrap";
+import {Button, Form} from "react-bootstrap";
 
 
 
@@ -16,13 +16,36 @@ export default class ProductForm extends Component{
           };
         this.addProduct = this.addProduct.bind(this);
 
-    }
+    }  
 
-  
+    loadProductsData=()=>{
+        fetch('https://pruebafiltro.tiagobg.repl.co/products')
+        .then((response)=>{
+            return response.json()
+        })
+        .then((data)=>{
+            this.setState({
+                products: data
+            })
+        })
+        .catch((error)=>{
+            console.log(error)
+        })
+    }
 
    /*  choices(e){
         document.getElementById('category').value = e.target.value;
     } */
+    sortForPrice = ()=>{
+        // this.loadProductsData();
+        const sortPrice = this.state.products.sort((a,b) => {
+            if (a.price > b.price) return 1;
+            if (a.price < b.price) return -1;
+
+            return 0;
+        });
+        console.table(sortPrice);        
+    }
     addProduct(e){
         const productName = document.getElementById('product-name');
         const productCompany = document.getElementById('product-company');
@@ -32,6 +55,7 @@ export default class ProductForm extends Component{
         const setDiscount = document.getElementById('set-discount');
         const productSubcategory = document.getElementById('product-subcategory');
         const productDescription = document.getElementById('product-description');
+        const productImages = document.getElementById('product-images');
 
         let data = {
             name: productName.value,
@@ -41,7 +65,8 @@ export default class ProductForm extends Component{
             quantity: availableUnits.value,
             discount: setDiscount.value,
             subcategory: productSubcategory.value,
-            description: productDescription.value
+            description: productDescription.value,
+            image: productImages.value
 
         }
         fetch('https://pruebafiltro.tiagobg.repl.co/products', {
@@ -49,13 +74,13 @@ export default class ProductForm extends Component{
             headers: {
                 'Content-Type' : 'application/json'
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(data)            
         })
         .then((response)=> response.json())
         .then((data)=>{
-            alert(`Se añade el producto ${data.product} con id: ${data.id} `)
+            alert(`Se añade el producto ${data.name} con id: ${data.id} `)
             this.loadProductsData()
-            this.editProduct()
+            this.editProduct()           
         })
     }
 
@@ -89,22 +114,9 @@ export default class ProductForm extends Component{
         }else{
             setDiscount.setAttribute('disabled', "");
         }
-        console.log(setDiscount.disabled)
+        // console.log(setDiscount.disabled)
     }
-    loadProductsData=()=>{
-        fetch('https://pruebafiltro.tiagobg.repl.co/products')
-        .then((response)=>{
-            return response.json()
-        })
-        .then((data)=>{
-            this.setState({
-                products: data
-            })
-        })
-        .catch((error)=>{
-            console.log(error)
-        })
-    }
+    
 
     componentDidMount(){
         this.loadProductsData()
@@ -130,13 +142,10 @@ export default class ProductForm extends Component{
                         </div>
                         
                         <Form>
-                            <Form.File 
-                               id='product-images'
-                                label="Agregar fotos"
-                                custom
-                                disabled
-                            />
-                        </Form><br/>                        
+                            <Form.Group>
+                                <Form.File id='product-images' label="Agrega la imagen de tu producto" disabled />
+                            </Form.Group>
+                        </Form><br/>                    
 
                         <label htmlFor="product">Ingresa el nombre de tu producto: </label>
                         <input type="text" name='product' id='product-name' className='col-8' disabled/><br/>
@@ -192,7 +201,7 @@ export default class ProductForm extends Component{
                     </div>
                 </article>
 
-                <Button className='m-3'>Nuevo producto</Button>
+                <Button className='m-3' onClick={this.sortForPrice}>Ordenar por precio</Button>
                 <Button className='m-3' onClick={this.addProduct}>Enviar</Button>
 
                 <div>
@@ -201,13 +210,15 @@ export default class ProductForm extends Component{
                             <tr>
                                 <th scope="col">ID</th>
                                 <th scope="col">Nombre</th>
-                                <th scope="col">Precio</th>
+                                <th scope="col">Precio (COP)</th>
                                 <th scope="col">Cantidad</th>                                
                                 <th scope="col">Compañia</th>
                                 <th scope="col">Categoría</th>
                                 <th scope="col">Subcategoría</th>
                                 <th scope="col">Descuento</th>
-                                <th scope="col">Descripción</th>                                
+                                <th scope='col'>Precio Final</th>
+                                <th scope="col">Descripción</th>  
+                                <th scope='col'>Images</th>                              
                             </tr>
                         </thead>
                         <tbody>                                
@@ -215,13 +226,15 @@ export default class ProductForm extends Component{
                                 return <tr key={i}>
                                     <td>{item.id}</td>
                                     <td>{item.name}</td>
-                                    <td>{item.price}</td>
+                                    <td>{new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP' }).format(item.price)}</td>
                                     <td>{item.quantity}</td>
                                     <td>{item.company}</td>                                    
                                     <td>{item.category}</td>
                                     <td>{item.subcategory}</td>
-                                    <td>{item.discount}</td>
+                                    <td>{item.discount}%</td>
+                                    <td>{new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP' }).format(item.price -= item.price*(item.discount/100))}</td>
                                     <td>{item.description}</td>
+                                    <td>{item.image}</td>
 
                                 </tr>
                             })}                                
