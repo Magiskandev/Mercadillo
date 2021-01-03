@@ -18,6 +18,21 @@ export default class ProductForm extends Component{
 
     }  
 
+    loadProductsData=()=>{
+        fetch('https://pruebafiltro.tiagobg.repl.co/products')
+        .then((response)=>{
+            return response.json()
+        })
+        .then((data)=>{
+            this.setState({
+                products: data
+            })
+        })
+        .catch((error)=>{
+            console.log(error)
+        })
+    }
+
    /*  choices(e){
         document.getElementById('category').value = e.target.value;
     } */
@@ -29,7 +44,7 @@ export default class ProductForm extends Component{
 
             return 0;
         });
-        console.table(sortPrice);
+        console.table(sortPrice);        
     }
     addProduct(e){
         const productName = document.getElementById('product-name');
@@ -51,7 +66,7 @@ export default class ProductForm extends Component{
             discount: setDiscount.value,
             subcategory: productSubcategory.value,
             description: productDescription.value,
-            image: productImages
+            image: productImages.value
 
         }
         fetch('https://pruebafiltro.tiagobg.repl.co/products', {
@@ -59,13 +74,13 @@ export default class ProductForm extends Component{
             headers: {
                 'Content-Type' : 'application/json'
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(data)            
         })
         .then((response)=> response.json())
         .then((data)=>{
-            alert(`Se añade el producto ${data.product} con id: ${data.id} `)
+            alert(`Se añade el producto ${data.name} con id: ${data.id} `)
             this.loadProductsData()
-            this.editProduct()
+            this.editProduct()           
         })
     }
 
@@ -101,20 +116,7 @@ export default class ProductForm extends Component{
         }
         // console.log(setDiscount.disabled)
     }
-    loadProductsData=()=>{
-        fetch('https://pruebafiltro.tiagobg.repl.co/products')
-        .then((response)=>{
-            return response.json()
-        })
-        .then((data)=>{
-            this.setState({
-                products: data
-            })
-        })
-        .catch((error)=>{
-            console.log(error)
-        })
-    }
+    
 
     componentDidMount(){
         this.loadProductsData()
@@ -208,7 +210,7 @@ export default class ProductForm extends Component{
                             <tr>
                                 <th scope="col">ID</th>
                                 <th scope="col">Nombre</th>
-                                <th scope="col">Precio</th>
+                                <th scope="col">Precio (COP)</th>
                                 <th scope="col">Cantidad</th>                                
                                 <th scope="col">Compañia</th>
                                 <th scope="col">Categoría</th>
@@ -223,7 +225,7 @@ export default class ProductForm extends Component{
                                 return <tr key={i}>
                                     <td>{item.id}</td>
                                     <td>{item.name}</td>
-                                    <td>{item.price}</td>
+                                    <td>{new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP' }).format(item.price)}</td>
                                     <td>{item.quantity}</td>
                                     <td>{item.company}</td>                                    
                                     <td>{item.category}</td>
