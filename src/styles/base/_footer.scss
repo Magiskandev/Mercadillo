@@ -1,7 +1,13 @@
-.content-footer-global {
+.margin-section-one-footer {
+    margin-left: 90px !important;
+    margin-right: 90px !important;
+    height: 100%;
+}
+
+.section-one-footer {
+    background: #F6F7F7;
     width: 100%;
     height: 175px;
-    background: #F6F7F7;
     margin-top: 236px !important;
     
 }
@@ -14,12 +20,6 @@
     font-weight: bold;
     font-size: 18px;
     color: #2C2C2C;
-}
-
-.content-first-part-footer {
-    margin-left: 90px !important;
-    margin-right: 90px !important;
-    width: 100%;
 }
 
 .paragraph-novelties-footer {
@@ -71,3 +71,16 @@ height: 80px;
     height: max-content;
 }
 
+.content-second-part-footer {
+    height: 85px;
+    width: 100%;
+    background: #2C2C2C;
+}
+
+.paragraph-support-footer {
+    font-family: Open Sans;
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+color: #FDFDFD;
+}
