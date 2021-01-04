@@ -66,16 +66,16 @@ export default class ProductForm extends Component{
         const productSubcategory = document.getElementById('product-subcategory');
         const productDescription = document.getElementById('product-description');
         const productImages = document.getElementById('product-images');
-
+        
         let data = {
-            name: productName.value,
-            company: productCompany.value,
-            category: productCategory.value,
-            price: productPrice.value,
-            quantity: availableUnits.value,
-            discount: setDiscount.value,
-            subcategory: productSubcategory.value,
-            description: productDescription.value,
+            name: productName.value.trim(),
+            company: productCompany.value.trim(),
+            category: productCategory.value.trim(),
+            price: productPrice.value.trim(),
+            quantity: availableUnits.value.trim(),
+            discount: setDiscount.value.trim(),
+            subcategory: productSubcategory.value.trim(),
+            description: productDescription.value.trim(),
             image: productImages.value
 
         }
@@ -92,6 +92,7 @@ export default class ProductForm extends Component{
             this.loadProductsData()
             this.editProduct()           
         })
+        console.log(data.image);
     }
 
     editProduct = ()=>{        
@@ -196,7 +197,7 @@ export default class ProductForm extends Component{
                             </div>
                         </div>
                         <div className='my-3'>
-                            <label htmlFor="category" className='mr-2'>Ingresa el precio: </label>
+                            <label htmlFor="category" className='mr-2'>Ingresa el precio sin puntos ni comas (COP): </label>
                             <input type="number" name='price' className='col-5' min='0' id='product-price' disabled/><br/>
                         </div>
                     
@@ -217,7 +218,7 @@ export default class ProductForm extends Component{
                         </div>
                         <div className="d-column">            
                             <label htmlFor="description">Agrega la descripción del producto:</label>
-                            <textarea name='description' id='product-description' className='col' type="text" disabled/>
+                            <textarea name='description' id='product-description' className='col' rows='4' type="text" disabled/>
                         </div> 
                     </div>
                 </article>
