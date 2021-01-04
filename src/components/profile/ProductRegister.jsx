@@ -10,9 +10,19 @@ export default class ProductForm extends Component{
         super()
         this.state = {
             value: 0,
-            products: [{
-                
-            }]
+            products: [{}],
+            categories:{
+                "Misceláneos": ["Accesorios", "Ecológico", "Decoración", "Utilidades"]
+            ,
+                "Comidas": ["Comidas Rápidas", "Gourmet", "Restaurantes", "Helados", "Charcutería"]
+            ,
+                "Servicios": ["Mantenimiento", "Salud y belleza", "Automotores", "Entretenimiento", "Recados"]
+            ,
+                "Tienda": ["Abarrotes", "Estanquillo", "Fruvers", "Cárnicos"]
+            ,
+                "Inclusivo": ["Físico", "Audio", "Visual", "Cognitivo", "Quirúrgico"]
+            },
+            subcategories: []
           };
         this.addProduct = this.addProduct.bind(this);
 
@@ -117,6 +127,14 @@ export default class ProductForm extends Component{
         // console.log(setDiscount.disabled)
     }
     
+    subcategoryChoices=(e)=>{
+        const productCategory = document.getElementById('product-category').value;        
+        const categories = this.state.categories;
+
+        this.setState({subcategories: categories[productCategory]}, ()=>{
+            console.log(this.state.subcategories);
+        });        
+    }
 
     componentDidMount(){
         this.loadProductsData()
@@ -154,12 +172,14 @@ export default class ProductForm extends Component{
                     
                         <div className="d-flex my-3 mb-2">
                             <div className='d-flex mr-2'>
-                                <Form.Group controlId="exampleForm.ControlSelect1">
+                                <Form.Group controlId="exampleForm.ControlSelect1" onChange={this.subcategoryChoices}>
                                     <Form.Label>Selecciona la categoría del producto:</Form.Label>
                                     <Form.Control as="select" id='product-category' disabled>
-                                        <option>Audio</option>
-                                        <option>Physics</option>
-                                        <option>Visual</option>                       
+                                        <option>Misceláneos</option>
+                                        <option>Comidas</option>
+                                        <option>Servicios</option>
+                                        <option>Tienda</option> 
+                                        <option>Inclusivo</option>                        
                                     </Form.Control>
                                 </Form.Group>
                             </div>
@@ -167,9 +187,10 @@ export default class ProductForm extends Component{
                                 <Form.Group controlId="exampleForm.ControlSelect1">
                                     <Form.Label>Selecciona la subcategoría del producto:</Form.Label>
                                     <Form.Control as="select" id='product-subcategory' disabled>
-                                        <option>Audio</option>
-                                        <option>Physics</option>
-                                        <option>Visual</option>                       
+                                        {this.state.subcategories.map((item) =>
+                                        <option key={item}>{item}</option>    
+                                        )};                                    
+                                                             
                                     </Form.Control>
                                 </Form.Group>
                             </div>
