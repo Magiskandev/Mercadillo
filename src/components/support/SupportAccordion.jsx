@@ -20,8 +20,8 @@ export default class SupportAccordion extends React.Component{
     render(){
         return(
 
-            <section>
-                <div class="acordeon container-fluid my-5">
+            <section className='container-fluid my-5'>
+                <div class="acordeon">
                     <div class="item">
                         <div class="header"><button onClick={this.expandOptions}>¿Problemas con tu compra?</button></div>
                         <div class="content">
