@@ -14,6 +14,7 @@ import Testimonials from './Testimonials'
 import PhotoOne from '../../images/png/photo-1.png'
 import PhotoTwo from '../../images/png/photo-2.png'
 import PhotoThree from '../../images/png/photo-3.png'
+import Footer from '../base/Footer'
 
 function HomeInfoMaster() {
   const [activeTab, setActiveTab] = useState('1');
@@ -114,6 +115,8 @@ function HomeInfoMaster() {
           NameTestimonial="Camilo Restrepo"
           PositionTestimonial="CTO en Vines" />
       </section>
+      <Footer />
+
     </>
   )
 }
