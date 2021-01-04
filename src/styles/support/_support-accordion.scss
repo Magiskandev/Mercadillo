@@ -1,0 +1,29 @@
+
+
+.acordeon{
+    width: 500px;
+    margin: 100px auto;
+}
+
+.acordeon .item{
+    display: block;
+}
+
+.acordeon .item .header button{
+    display: block;
+    width: 100%;
+    padding: 20px;
+}
+.acordeon .item .content{
+    transition: height 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    overflow: hidden;
+    height: 0;
+}
+
+.content{
+   border: 2px solid lightgoldenrodyellow;
+}
+
+.acordeon .item .content.show{
+    height: 150px;
+}
