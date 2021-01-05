@@ -2,14 +2,13 @@ import { Component } from 'react';
 import CardProducts from '../components/products/CardProducts'
 import CarouselApp from '../components/products/CarouselApp';
 import SearchBar from '../components/home/SearchBar';
+import NavPrincipal from '../components/base/NavPrincipal';
 
 export default class Products extends Component {
     render() {
         return (
             <section className="global-section-home">
-                <div style={{ backgroundColor: '#ffeaa7', textAlign: 'center' }}>
-                    <h1>Productos</h1>
-                </div>
+                <NavPrincipal />
                 <CarouselApp title={"Promociones"} />
                 <CarouselApp title={"Los más buscados"} />
                 <SearchBar />
