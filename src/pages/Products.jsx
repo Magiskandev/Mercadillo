@@ -10,8 +10,7 @@ export default class Products extends Component {
                 <div style={{backgroundColor: '#ffeaa7', textAlign: 'center'}}>
                     <h1>Productos</h1>
                 </div>  
-                <CarouselApp title={"Promociones"}/>
-                <CarouselApp title={"Los más buscados"}/>
+                <CarouselApp/>
                 <SearchBar />
                 <CardProducts />
             </section>
