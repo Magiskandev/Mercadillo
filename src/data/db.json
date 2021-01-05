@@ -1,0 +1,133 @@
+ {
+      "products": [
+    {
+      "id": 1,
+      "name": "Sandi",
+      "company": "Thoughtsphere",
+      "category": "Audio",
+      "price": "71300",
+      "discount": "20",
+      "description": "Lorem ipsum dolerm daser Sandi Thoughtsphere",
+      "times searched": "120"
+    },
+    {
+      "id": 2,
+      "name": "Kira",
+      "company": "Browsedrive",
+      "category": "Physics",
+      "price": "54200",
+      "discount": "10",
+      "description": "Lorem ipsum dolerm daser Kira Browsedrive",
+      "times searched": "100"
+    },
+    {
+      "id": 3,
+      "name": "Marika",
+      "company": "Zoomlounge",
+      "category": "Audio",
+      "price": "26200",
+      "discount": "10",
+      "description": "Lorem ipsum dolerm daser Marika Zoomlounge",
+      "times searched": "220"
+    },
+    {
+      "id": 4,
+      "name": "Abbi",
+      "company": "Thoughtsphere",
+      "category": "Physics",
+      "price": "25950",
+      "discount": "0",
+      "description": "Lorem ipsum dolerm daser Abbi Thoughtsphere",
+      "times searched": "150"
+    },
+    {
+      "id": 5,
+      "name": "Ebony",
+      "company": "Zoomlounge",
+      "category": "Visual",
+      "price": "10800",
+      "discount": "0",
+      "description": "Lorem ipsum dolerm daser Ebony Zoomlounge",
+      "times searched": "250"
+    },
+    {
+      "id": 6,
+      "name": "Neron",
+      "company": "Mordecai",
+      "category": "Physics",
+      "price": "59700",
+      "discount": "0",
+      "description": "Lorem ipsum dolerm daser Neron Mordecai",
+      "times searched": "100"
+    },
+    {
+      "id": 7,
+      "name": "Blanch",
+      "company": "Browsedrive",
+      "category": "Physics",
+      "price": "62350",
+      "discount": "20",
+      "description": "Lorem ipsum dolerm daser Blanch Browsedrive",
+      "times searched": "70"
+    },
+    {
+      "id": 8,
+      "name": "Hermine",
+      "company": "Yozio",
+      "category": "Physics",
+      "price": "62700",
+      "discount": "0",
+      "description": "Lorem ipsum dolerm daser Hermine Yozio",
+      "times searched": "50"
+    },
+    {
+      "id": 9,
+      "name": "Danice",
+      "company": "Thoughtsphere",
+      "category": "Visual",
+      "price": "57550",
+      "discount": "25",
+      "description": "Lorem ipsum dolerm daser Danice Thoughtsphere",
+      "times searched": "180"
+    },
+    {
+      "id": 10,
+      "name": "Marice",
+      "company": "Edgeclub",
+      "category": "Audio",
+      "price": "53550",
+      "discount": "30",
+      "description": "Lorem ipsum dolerm daser Marice Edgeclub",
+      "times searched": "190"
+    },
+    {
+      "id": 11,
+      "name": "Adiana",
+      "company": "Edgeclub",
+      "category": "Visual",
+      "price": "42250",
+      "discount": "15",
+      "description": "Lorem ipsum dolerm daser Adiana Edgeclub",
+      "times searched": "60"
+    },
+    {
+      "id": 12,
+      "name": "Bodenia",
+      "company": "Browsedrive",
+      "category": "Audio",
+      "price": "64250",
+      "discount": "40",
+      "description": "Lorem ipsum dolerm daser Bodenia Browsedrive",
+      "times searched": "175"
+    },
+    {
+      "id": 13,
+      "name": "Alysa",
+      "company": "Mordecai",
+      "category": "Physics",
+      "price": "12400",
+      "discount": "0",
+      "description": "Lorem ipsum dolerm daser Alysa Mordecai",
+      "times searched": "210"
+    }
+  ]}    

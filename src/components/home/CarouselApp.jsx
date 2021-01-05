@@ -5,10 +5,33 @@ import "bootstrap/dist/css/bootstrap.min.css";
 export default class CarouselApp extends React.Component {
   constructor(props){
     super(props)
+    this.state = {
+      products: [{}]
+    }
   }
+
+  loadProductsData=()=>{
+    fetch('https://pruebafiltro.tiagobg.repl.co/products')
+    .then((response)=>{
+        return response.json()
+    })
+    .then((data)=>{
+        this.setState({
+            products: data.sort(function(a, b){
+              return b.discount - a.discount;
+          })
+        });
+        console.table(this.state.products)
+    })
+    .catch((error)=>{
+        console.log(error)
+    })
+  }
+
   render() {
     return (
       <section className='container-fluid my-4'>
+        <button onClick={this.loadProductsData}>Sorting Hat</button>
         <h2 className='my-3'>{this.props.title}</h2>
         <Carousel>
           <Carousel.Item>
