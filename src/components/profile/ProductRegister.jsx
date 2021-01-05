@@ -56,6 +56,18 @@ export default class ProductForm extends Component{
         });
         console.table(sortPrice);        
     }
+
+    avoidRepeated = ()=>{
+        const data = this.state.products;
+        const productName = document.getElementById('product-name').value;
+        const productCompany = document.getElementById('product-company').value;
+
+        console.table(data)
+        console.log(productName, productCompany )
+        for(const item of data){
+            (productName === item.name && productCompany === item.company)? alert("Lo siento: El producto fue agregado anteriormente") : console.log("Producto nuevo! Puedes agregarlo")
+        }    
+    }
     addProduct(e){
         const productName = document.getElementById('product-name');
         const productCompany = document.getElementById('product-company');
@@ -66,6 +78,7 @@ export default class ProductForm extends Component{
         const productSubcategory = document.getElementById('product-subcategory');
         const productDescription = document.getElementById('product-description');
         const productImages = document.getElementById('product-images');
+        
         
         let data = {
             name: productName.value.trim(),
@@ -176,6 +189,7 @@ export default class ProductForm extends Component{
                                 <Form.Group controlId="exampleForm.ControlSelect1" onChange={this.subcategoryChoices}>
                                     <Form.Label>Selecciona la categoría del producto:</Form.Label>
                                     <Form.Control as="select" id='product-category' disabled>
+                                        <option>--Selecciona--</option>
                                         <option>Misceláneos</option>
                                         <option>Comidas</option>
                                         <option>Servicios</option>
@@ -219,11 +233,13 @@ export default class ProductForm extends Component{
                         <div className="d-column">            
                             <label htmlFor="description">Agrega la descripción del producto:</label>
                             <textarea name='description' id='product-description' className='col' rows='4' type="text" disabled/>
-                        </div> 
+                        </div>
+                        <p className='mt-4'><strong>NOTA: Recuerda primero chequear que no se haya ingresado el producto anteriormente dando click al botón "Chequear repetidos"</strong></p>
                     </div>
                 </article>
 
                 <Button className='m-3' onClick={this.sortForPrice}>Ordenar por precio</Button>
+                <Button className='m-3' onClick={this.avoidRepeated}>Chequear repetidos</Button>
                 <Button className='m-3' onClick={this.addProduct}>Enviar</Button>
 
                 <div>
