@@ -268,6 +268,7 @@ export default class ProductForm extends Component{
                                     <Form.Control type="range" max="100" value={this.state.value} onChange={handleChange} step="1" id='set-discount' custom disabled/>
                                     <input type="text" id="slider" min="0" max="100" className='col-3' disabled style={{color: 'black'}}/>
                                 </Form.Group>
+                                <input type="text" id='final-price' label='Precio final:'/>
                             </Form>                        
                         </div>
                         <div className="d-column">            
