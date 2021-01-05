@@ -22,8 +22,7 @@ export default class CarouselApp extends React.Component {
             return b.discount - a.discount;
           }),
           title: 'Promociones'
-        });
-        console.table(this.state.products)
+        });        
       })
       .catch((error) => {
         console.log(error)
@@ -40,8 +39,7 @@ export default class CarouselApp extends React.Component {
             return b.timeSearched - a.timeSearched;
           }),
           title: 'Los más buscados'
-        });
-        console.table(this.state.products)
+        });        
       })
       .catch((error) => {
         console.log(error)
@@ -55,6 +53,7 @@ export default class CarouselApp extends React.Component {
         <h2 className='my-3'>{this.state.title}</h2>
         <Carousel>
           {this.state.products.slice(0, 9).map((item, i) => {
+            console.log(item,i);
             return <Carousel.Item>
               <CardDeck>
                 <Card key={i}>
