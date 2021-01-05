@@ -1,6 +1,6 @@
 import React from 'react'
-import HomeInfoMaster from '../components/products/HomeInfoMaster'
-import NavTop from '../components/products/NavTop'
+import HomeInfoMaster from '../components/home/HomeInfoMaster'
+import NavTop from '../components/home/NavTop'
 
 
 function Home() {
