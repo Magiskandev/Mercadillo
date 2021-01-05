@@ -1,9 +1,11 @@
 import React from 'react'
+import Vineta from '../../images/svg/viñeta.svg'
 
 function InfoTabOne() {
     return (
         <>
             <section className="d-flex flex-column align-items-center">
+                <img src={Vineta} alt="" className="position-absolute vineta-tab-style" />
                 <div className="d-flex">
                     <article className="article-tab-one-home-one">
                         <p className="subtitle-tab-info-one-home mb-4">Página con herramientas para facilitar la accesibilidad </p>
