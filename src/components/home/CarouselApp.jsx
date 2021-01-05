@@ -50,8 +50,8 @@ export default class CarouselApp extends React.Component {
   render() {
     return (
       <section className='container-fluid my-4'>
-        <button onClick={this.loadPromotions}>Promociones</button>
-        <button onClick={this.loadPopulars}>Los más buscados</button>
+        <button className='btn btn-warning mx-2' onClick={this.loadPromotions}>Promociones</button>
+        <button className='btn btn-warning mx-2' onClick={this.loadPopulars}>Los más buscados</button>
         <h2 className='my-3'>{this.state.title}</h2>
         <Carousel>
            <Carousel.Item>
