@@ -1,8 +1,5 @@
-import React from 'react';
-import {Component } from 'react';
+import React, {Component} from 'react';
 import {Button, Form} from "react-bootstrap";
-
-
 
 export default class ProductForm extends Component{
     
@@ -56,18 +53,27 @@ export default class ProductForm extends Component{
         });
         console.table(sortPrice);        
     }
-
-    //FALTA REVISAR LA PARTE FINAL DEL CONDICIONAL PARA QUE MUESTRE UNA ÚNICA VEZ UNA ALERTA INDICANDO EL GO!
+   
     avoidRepeated = ()=>{
         const data = this.state.products;
         const productName = document.getElementById('product-name').value;
         const productCompany = document.getElementById('product-company').value;            
         
+        let output = 0;
+        let repeat = 0;
         for(const item of data){
-            (productName === item.name && productCompany === item.company)? alert("Lo siento: El producto fue agregado anteriormente") : (console.log("GO"))           
+            if(productName === item.name && productCompany === item.company){
+                alert("Lo siento: El producto fue agregado anteriormente")
+                repeat += 1;
+            }else{
+                console.log(output);
+                output += 1;
+            }      
           
         }
-        
+        if(output > 0 && repeat === 0){
+            alert("Producto Nuevo: Puedes ingresar el producto")
+        }
     }
     addProduct(e){
         const productName = document.getElementById('product-name');
@@ -80,36 +86,45 @@ export default class ProductForm extends Component{
         const productDescription = document.getElementById('product-description');
         const productImages = document.getElementById('product-images');
         
-        
-        let data = {
-            name: productName.value.trim(),
-            company: productCompany.value.trim(),
-            category: productCategory.value.trim(),
-            price: productPrice.value.trim(),
-            quantity: availableUnits.value.trim(),
-            discount: setDiscount.value.trim(),
-            subcategory: productSubcategory.value.trim(),
-            description: productDescription.value.trim(),
-            image: productImages.value
 
+
+        if(productName.value === '' || productCompany.value === '' || productPrice.value === ''  || availableUnits.value === '' || productSubcategory.value === '' || productCategory.value === '' || productDescription.value ==='' || productName.disabled){
+            alert("Por favor ingresa los datos requeridos")
+        } else{
+
+            let data = {
+                name: productName.value.trim(),
+                company: productCompany.value.trim(),
+                category: productCategory.value.trim(),
+                price: productPrice.value.trim(),
+                quantity: availableUnits.value.trim(),
+                discount: setDiscount.value.trim(),
+                subcategory: productSubcategory.value.trim(),
+                description: productDescription.value.trim(),
+                image: productImages.value
+    
+            }
+            fetch('https://pruebafiltro.tiagobg.repl.co/products', {
+                method: 'POST',
+                headers: {
+                    'Content-Type' : 'application/json'
+                },
+                body: JSON.stringify(data)            
+            })
+            .then((response)=> response.json())
+            .then((data)=>{
+                alert(`Se añade el producto ${data.name} con id: ${data.id} `)
+                this.loadProductsData()
+                this.editProduct()           
+            })
+            console.log(data.image);
         }
-        fetch('https://pruebafiltro.tiagobg.repl.co/products', {
-            method: 'POST',
-            headers: {
-                'Content-Type' : 'application/json'
-            },
-            body: JSON.stringify(data)            
-        })
-        .then((response)=> response.json())
-        .then((data)=>{
-            alert(`Se añade el producto ${data.name} con id: ${data.id} `)
-            this.loadProductsData()
-            this.editProduct()           
-        })
-        console.log(data.image);
+        
     }
 
-    editProduct = ()=>{        
+    editProduct = ()=>{    
+        
+        //OJO QUE SI LA PERSONA EN CATEGORÍA VUELVE A SELECCIONAR --SELECCIONA-- LA APP SE CRASHEA
         const availableUnits = document.getElementById('available-units');
         const productName = document.getElementById('product-name');
         const productCompany = document.getElementById('product-company');
@@ -151,6 +166,29 @@ export default class ProductForm extends Component{
         });        
     }
 
+    clearFields = () => {
+        const availableUnits = document.getElementById('available-units');
+        const productName = document.getElementById('product-name');
+        const productCompany = document.getElementById('product-company');
+        const productImages = document.getElementById('product-images');
+        const productCategory = document.getElementById('product-category');
+        const productSubcategory = document.getElementById('product-subcategory');
+        const productPrice = document.getElementById('product-price');
+        const addDiscount = document.getElementById('price-switch');
+        const productDescription = document.getElementById('product-description');
+        const setDiscount = document.getElementById('set-discount');
+        const discountShow = document.getElementById('slider');
+
+        const productInputs = [availableUnits, productName, productCompany, productImages, productCategory, productSubcategory, productPrice, addDiscount, productDescription]
+
+        for(const input of productInputs){
+            input.value = ''
+        }
+        setDiscount.value = 0;
+        discountShow.value = 0;
+        alert('Los campos han sido eliminados')
+    }
+
     componentDidMount(){
         this.loadProductsData()
     }
@@ -166,12 +204,13 @@ export default class ProductForm extends Component{
                 <article className='col-5 card p-3 ml-2 mt-5'>
                     <div className='row'>
                         <button className='col-3 mx-3 btn btn-primary' onClick={this.editProduct}>EDIT</button>
-                        <button className='col-3 mx-3 btn btn-danger'>DELETE</button>
+                        <button className='col-3 mx-3 btn btn-danger' onClick={this.clearFields}>DELETE</button>
                     </div><br/>
                     <div id='product-card-register'>
+                        <p className='mt-3'>Los campos con * son obligatorios</p>
                         <div  className='mx-2 col mt-5 mb-3'>
-                            <label htmlFor="cantidad" className='mr-2'>Unidades Disponibles </label>
-                            <input name='cantidad' type="number" className='col-5' min='0' id='available-units' disabled/>
+                            <label htmlFor="cantidad" className='mr-2'>* Unidades Disponibles: </label>
+                            <input name='cantidad' type="number" className='col-5' min='0' id='available-units' required disabled/>
                         </div>
                         
                         <Form>
@@ -180,16 +219,16 @@ export default class ProductForm extends Component{
                             </Form.Group>
                         </Form><br/>                    
 
-                        <label htmlFor="product">Ingresa el nombre de tu producto: </label>
-                        <input type="text" name='product' id='product-name' className='col-8' disabled/><br/>
-                        <label htmlFor="company">Ingresa el nombre de la compañía: </label>
-                        <input type="text" name='company' id='product-company' className='col-8' disabled/><br/>                                   
+                        <label htmlFor="product">* Ingresa el nombre de tu producto: </label>
+                        <input type="text" name='product' id='product-name' className='col-8' required disabled/><br/>
+                        <label htmlFor="company">* Ingresa el nombre de la compañía: </label>
+                        <input type="text" name='company' id='product-company' className='col-8' required disabled/><br/>                                   
                     
                         <div className="d-flex my-3 mb-2">
                             <div className='d-flex mr-2'>
                                 <Form.Group controlId="exampleForm.ControlSelect1" onChange={this.subcategoryChoices}>
-                                    <Form.Label>Selecciona la categoría del producto:</Form.Label>
-                                    <Form.Control as="select" id='product-category' disabled>
+                                    <Form.Label>* Selecciona la categoría del producto:</Form.Label>
+                                    <Form.Control as="select" id='product-category' required disabled>
                                         <option>--Selecciona--</option>
                                         <option>Misceláneos</option>
                                         <option>Comidas</option>
@@ -201,8 +240,8 @@ export default class ProductForm extends Component{
                             </div>
                             <div className='d-flex ml-2'>
                                 <Form.Group controlId="exampleForm.ControlSelect1">
-                                    <Form.Label>Selecciona la subcategoría del producto:</Form.Label>
-                                    <Form.Control as="select" id='product-subcategory' disabled>
+                                    <Form.Label>* Selecciona la subcategoría del producto:</Form.Label>
+                                    <Form.Control as="select" id='product-subcategory' required disabled>
                                         {this.state.subcategories.map((item) =>
                                         <option key={item}>{item}</option>    
                                         )};                                    
@@ -212,8 +251,8 @@ export default class ProductForm extends Component{
                             </div>
                         </div>
                         <div className='my-3'>
-                            <label htmlFor="category" className='mr-2'>Ingresa el precio sin puntos ni comas (COP): </label>
-                            <input type="number" name='price' className='col-5' min='0' id='product-price' disabled/><br/>
+                            <label htmlFor="category" className='mr-2'>* Ingresa el precio sin puntos ni comas (COP): </label>
+                            <input type="number" name='price' className='col-5' min='0' id='product-price' required disabled/><br/>
                         </div>
                     
                         <div className='row my-3 mx-auto'>                                                      
@@ -232,8 +271,8 @@ export default class ProductForm extends Component{
                             </Form>                        
                         </div>
                         <div className="d-column">            
-                            <label htmlFor="description">Agrega la descripción del producto:</label>
-                            <textarea name='description' id='product-description' className='col' rows='4' type="text" disabled/>
+                            <label htmlFor="description">* Agrega la descripción del producto:</label>
+                            <textarea name='description' id='product-description' className='col' rows='4' type="text" required disabled/>
                         </div>
                         <p className='mt-4'><strong>NOTA: Recuerda primero chequear que no se haya ingresado el producto anteriormente dando click al botón "Chequear repetidos"</strong></p>
                     </div>
