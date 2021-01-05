@@ -57,16 +57,17 @@ export default class ProductForm extends Component{
         console.table(sortPrice);        
     }
 
+    //FALTA REVISAR LA PARTE FINAL DEL CONDICIONAL PARA QUE MUESTRE UNA ÚNICA VEZ UNA ALERTA INDICANDO EL GO!
     avoidRepeated = ()=>{
         const data = this.state.products;
         const productName = document.getElementById('product-name').value;
-        const productCompany = document.getElementById('product-company').value;
-
-        console.table(data)
-        console.log(productName, productCompany )
+        const productCompany = document.getElementById('product-company').value;            
+        
         for(const item of data){
-            (productName === item.name && productCompany === item.company)? alert("Lo siento: El producto fue agregado anteriormente") : console.log("Producto nuevo! Puedes agregarlo")
-        }    
+            (productName === item.name && productCompany === item.company)? alert("Lo siento: El producto fue agregado anteriormente") : (console.log("GO"))           
+          
+        }
+        
     }
     addProduct(e){
         const productName = document.getElementById('product-name');
