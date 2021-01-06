@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import CardProducts from '../components/products/CardProducts'
 import CarouselApp from '../components/products/CarouselApp';
-import SearchBar from '../components/home/SearchBar';
+import FilterProducts from '../components/products/FilterProducts';
 import NavPrincipal from '../components/base/NavPrincipal';
 
 export default class Products extends Component {
@@ -10,9 +10,9 @@ export default class Products extends Component {
             <section className="global-section-home">
                 <div style={{ backgroundColor: '#ffeaa7', textAlign: 'center' }}>
                     <h1>Productos</h1>
-                </div>  
-                <CarouselApp/>
-                <SearchBar />
+                </div>
+                <CarouselApp />
+                <FilterProducts />
                 <CardProducts />
             </section>
         )
