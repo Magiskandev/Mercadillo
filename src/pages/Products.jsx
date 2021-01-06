@@ -10,7 +10,9 @@ export default class Products extends Component {
         return (
             <section className="global-section-home">
                 <NavPrincipal />
-                <CarouselApp />
+                <div className="mt-4">
+                    <CarouselApp/>
+                </div>
                 <div className="d-flex justify-content-between">
                     <FilterProducts />
                     <CardInfoSection />

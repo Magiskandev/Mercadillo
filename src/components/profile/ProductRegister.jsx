@@ -19,7 +19,8 @@ export default class ProductForm extends Component{
             ,
                 "Inclusivo": ["Físico", "Audio", "Visual", "Cognitivo", "Quirúrgico"]
             },
-            subcategories: []
+            subcategories: [],
+            finalPrice: 0
           };
         this.addProduct = this.addProduct.bind(this);
 
@@ -195,8 +196,10 @@ export default class ProductForm extends Component{
     
     render(){
         const handleChange = (e) => {
+            let productPrice = document.getElementById('product-price').value;
             this.setState({ value: e.target.value }, () => {
-              document.getElementById("slider").value = this.state.value;
+              document.getElementById("slider").value = this.state.value;              
+              document.getElementById("final-price").value = productPrice -= productPrice*(this.state.value/100) ;
             });
           };
         return(
@@ -268,8 +271,11 @@ export default class ProductForm extends Component{
                                     <Form.Control type="range" max="100" value={this.state.value} onChange={handleChange} step="1" id='set-discount' custom disabled/>
                                     <input type="text" id="slider" min="0" max="100" className='col-3' disabled style={{color: 'black'}}/>
                                 </Form.Group>
-                                <input type="text" id='final-price' label='Precio final:'/>
                             </Form>                        
+                        </div>
+                        <div className='my-3'>
+                            <label htmlFor="category" className='mr-2'>Precio Final (COP): </label>
+                            <input type="number" name='final-price' className='col-5' min='0' id='final-price' disabled/><br/>
                         </div>
                         <div className="d-column">            
                             <label htmlFor="description">* Agrega la descripción del producto:</label>
