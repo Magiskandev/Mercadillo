@@ -1,0 +1,29 @@
+#searcher-container{
+    width: 500px;
+    margin: 100px auto;
+}
+#searcher{
+    font-size: 28px;
+    padding: 10px 15px;
+}
+#suggestions{
+    border: solid 1px black;
+    width: 375px;
+    display: none;
+    position: absolute;
+}
+
+#suggestions a{
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #aaa;
+}
+#suggestions a:hover{
+    background-color: #003366;
+    color: white;
+}
+
+#suggestions strong{
+    color: black;
+}
