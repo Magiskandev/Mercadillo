@@ -60,21 +60,27 @@ export default class ProductForm extends Component{
         const productName = document.getElementById('product-name').value;
         const productCompany = document.getElementById('product-company').value;            
         
-        let output = 0;
-        let repeat = 0;
-        for(const item of data){
-            if(productName === item.name && productCompany === item.company){
-                alert("Lo siento: El producto fue agregado anteriormente")
-                repeat += 1;
-            }else{
-                console.log(output);
-                output += 1;
-            }      
+        if (productName !== '' && productCompany !== ''){
+            let output = 0;
+            let repeat = 0;
+            for(const item of data){
+                if(productName === item.name && productCompany === item.company){
+                    alert("Lo siento: El producto fue agregado anteriormente")
+                    repeat += 1;
+                }else{
+                    console.log(output);
+                    output += 1;
+                }   
           
+            }
+
+            if(output > 0 && repeat === 0){
+                alert("Producto Nuevo: Puedes ingresar el producto")
+            }
+        }else{
+            alert("Por favor ingresa los datos requeridos");
         }
-        if(output > 0 && repeat === 0){
-            alert("Producto Nuevo: Puedes ingresar el producto")
-        }
+        
     }
     addProduct(e){
         const productName = document.getElementById('product-name');

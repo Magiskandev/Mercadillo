@@ -7,7 +7,8 @@ export default class CarouselApp extends React.Component {
     super(props)
     this.state = {
       products: [{}],
-      title: ''
+      title: '',
+      productsPerDeck: 3
     }
   }
 
@@ -46,6 +47,7 @@ export default class CarouselApp extends React.Component {
       })
   }
   render() {
+    // this.loadPromotions();    
     return (
       <section className='container-fluid mt-5'>
         <div className="mt-5">
@@ -53,50 +55,29 @@ export default class CarouselApp extends React.Component {
           <button className='btn btn-warning mx-2 mt-5' onClick={this.loadPopulars}>Los más buscados</button>
         </div>        
         <h2 className='my-3'>{this.state.title}</h2>
-        <Carousel>
+        <Carousel className='col-10 mx-auto text-white'>
           {this.state.products.slice(0, 9).map((item, i) => {
             console.log(item,i);
             return <Carousel.Item>
               <CardDeck>
-                <Card key={i}>
+                <Card key={i} className='bg-secondary'>
                   <Card.Img variant="top" src="holder.js/100px160" />
                   <Card.Body>
                     <Card.Title>{item.name}</Card.Title>
-                    <Card.Text>
+                    <Card.Text className='my-3'>
                       {item.description}
+                      <p className='font-weight-bold mt-2'>{new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP' }).format(item.price -= item.price*(item.discount/100))}</p>
+
                     </Card.Text>
+                    <div className="d-flex flex-row-reverse mr-0">
+                      <Button variant="primary" className='col-2 ml-2 mb-3'>Comprar</Button>                      
+                    </div>
                   </Card.Body>
-                  <Button variant="primary">Buy</Button>
+                  
                   <Card.Footer>
                     <small className="text-muted">{item.company}</small>
                   </Card.Footer>
-                </Card>
-                <Card key={i + 1}>
-                  <Card.Img variant="top" src="holder.js/100px160" />
-                  <Card.Body>
-                    <Card.Title>{item.name}</Card.Title>
-                    <Card.Text>
-                      {item.description}
-                    </Card.Text>
-                  </Card.Body>
-                  <Button variant="primary">Buy</Button>
-                  <Card.Footer>
-                    <small className="text-muted">{item.company}</small>
-                  </Card.Footer>
-                </Card>
-                <Card key={i + 2}>
-                  <Card.Img variant="top" src="holder.js/100px160" />
-                  <Card.Body>
-                    <Card.Title>{item.name}</Card.Title>
-                    <Card.Text>
-                      {item.description}
-                    </Card.Text>
-                  </Card.Body>
-                  <Button variant="primary">Buy</Button>
-                  <Card.Footer>
-                    <small className="text-muted">{item.company}</small>
-                  </Card.Footer>
-                </Card>
+                </Card>      
               </CardDeck>
             </Carousel.Item>
           })}
