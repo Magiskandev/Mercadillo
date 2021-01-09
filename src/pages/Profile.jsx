@@ -1,19 +1,18 @@
-import { Component } from 'react';
-import ProductRegister from '../components/profile/ProductRegister';
+import React from 'react';
+import { NavLink, Route, HashRouter } from 'react-router-dom';
+import ProfileNav from '../components/profile/ProfileNav';
 import PersonalInfo from '../components/profile/PersonalInfo';
+import ProductRegister from '../components/profile/ProductRegister';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Nav from 'react-bootstrap/Nav';
 
-export default class Profile extends Component {
-    render() {
-        return (
-            <section className="global-section-home">
-                <div style={{backgroundColor: '#ffeaa7', textAlign: 'center'}}>
-                    <h1>Perfil</h1>
-                </div>                
-                <div className='ml-5'>
-                    <PersonalInfo/>
-                    <ProductRegister />                    
-                </div>
-            </section>
-        )
-    }
+
+export default function Profile (){
+    return(
+        <section className="global-section-home">
+            {/* <ProfileNav/> */}
+            <PersonalInfo/>
+            <ProductRegister/>
+        </section>
+    )
 }

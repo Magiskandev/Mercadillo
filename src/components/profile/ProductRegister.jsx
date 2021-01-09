@@ -92,6 +92,7 @@ export default class ProductForm extends Component{
         const productSubcategory = document.getElementById('product-subcategory');
         const productDescription = document.getElementById('product-description');
         const productImages = document.getElementById('product-images');
+        const finalPrice = document.getElementById('final-price');
         
 
 
@@ -106,6 +107,7 @@ export default class ProductForm extends Component{
                 price: productPrice.value.trim(),
                 quantity: availableUnits.value.trim(),
                 discount: setDiscount.value.trim(),
+                finalPrice: finalPrice.value.trim(),
                 subcategory: productSubcategory.value.trim(),
                 description: productDescription.value.trim(),
                 image: productImages.value
@@ -125,8 +127,7 @@ export default class ProductForm extends Component{
                 this.editProduct()           
             })
             console.log(data.image);
-        }
-        
+        }        
     }
 
     editProduct = ()=>{    
@@ -173,7 +174,8 @@ export default class ProductForm extends Component{
         });        
     }
 
-    clearFields = () => {
+    clearFields = () => {        
+
         const availableUnits = document.getElementById('available-units');
         const productName = document.getElementById('product-name');
         const productCompany = document.getElementById('product-company');
@@ -193,7 +195,39 @@ export default class ProductForm extends Component{
         }
         setDiscount.value = 0;
         discountShow.value = 0;
-        alert('Los campos han sido eliminados')
+        alert('Los campos serán eliminados');        
+    }
+
+    bringItOn=()=>{
+
+        //LOS CAMPOS DEL FORMULARIO
+        const availableUnitsBox = document.getElementById('available-units');
+        const productNameBox = document.getElementById('product-name');
+        const productCompanyBox = document.getElementById('product-company');
+        // const productImages = document.getElementById('product-images');
+        const productCategoryBox = document.getElementById('product-category');
+        const productSubcategoryBox = document.getElementById('product-subcategory');
+        const productPriceBox = document.getElementById('product-price');
+        // const addDiscount = document.getElementById('price-switch');
+        const productDescriptionBox = document.getElementById('product-description');
+        // const setDiscount = document.getElementById('set-discount');
+        // const discountShow = document.getElementById('slider');
+
+        //LOS DATOS DEL REGISTRO
+        const availableUnits = document.getElementById('id-register').value;
+        const productName = document.getElementById('name-register').value;
+        const productCompany = document.getElementById('company-register').value.trim();
+        const productImages = document.getElementById('images-register').value.trim();
+        const productCategory = document.getElementById('category-register').value.trim();
+        const productSubcategory = document.getElementById('subcategory-register').value.trim();
+        const productPrice = document.getElementById('price-register').value.trim();
+        // const addDiscount = document.getElementById('price-switch');
+        const productDescription = document.getElementById('description-register').value.trim();
+        // const setDiscount = document.getElementById('set-discount');
+        // const discountShow = document.getElementById('slider');
+                
+        
+        console.log("--EDIT ITEM FROM--");
     }
 
     componentDidMount(){
@@ -309,26 +343,25 @@ export default class ProductForm extends Component{
                                 <th scope="col">Descuento</th>
                                 <th scope='col'>Precio Final</th>
                                 <th scope="col">Descripción</th>  
-                                <th scope='col'>Images</th>                              
+                                                              
                             </tr>
                         </thead>
-                        <tbody>                                
+                        <tbody>                                                          
                             {this.state.products.map((item, i)=> {
                                 return <tr key={i}>
-                                    <td>{item.id}</td>
-                                    <td>{item.name}</td>
-                                    <td>{new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP' }).format(item.price)}</td>
-                                    <td>{item.quantity}</td>
-                                    <td>{item.company}</td>                                    
-                                    <td>{item.category}</td>
-                                    <td>{item.subcategory}</td>
-                                    <td>{item.discount}%</td>
-                                    <td>{new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP' }).format(item.price -= item.price*(item.discount/100))}</td>
-                                    <td>{item.description}</td>
-                                    <td>{item.image}</td>
-
+                                    <td id='id-register'>{item.id}</td>
+                                    <td id='name-register' value={item.name}>{item.name}</td>
+                                    <td id='price-register'>{new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP' }).format(item.price)}</td>
+                                    <td id='quantity-register'>{item.quantity}</td>
+                                    <td id='company-register'>{item.company}</td>                                    
+                                    <td id='category-register'>{item.category}</td>
+                                    <td id='subcategory-register'>{item.subcategory}</td>
+                                    <td id='discount-register'>{item.discount}%</td>
+                                    <td id='precio-final-register'>{new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP' }).format(item.price -= item.price*(item.discount/100))}</td>
+                                    <td id='description-register'>{item.description}</td>
+                                    <td><button className='btn btn-primary' onClick={ this.bringItOn}>Editar</button></td>
                                 </tr>
-                            })}                                
+                            })}                          
                         </tbody>
                     </table>
                 </div>

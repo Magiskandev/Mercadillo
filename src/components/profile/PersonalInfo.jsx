@@ -28,7 +28,7 @@ export default class PersonalInfo extends Component{
         let passwordInput = document.getElementById('user-password')
         let passwordConfirmation = document.getElementById('confirm-password')
 
-        let passwordsFields = [passwordInput, passwordsFields]
+        let passwordsFields = [passwordInput, passwordConfirmation]
 
         passwordsFields.forEach(item =>{
             if(item.hasAttribute('disabled')){
@@ -41,7 +41,7 @@ export default class PersonalInfo extends Component{
 
     render(){
         return(
-            <section className='container-fluid'>
+            <section className='container-fluid mt-5 card'>                
                 <div className='row col-4 my-3 mt-5'>
                         <button className='col-4 mr-5 btn btn-primary' onClick={this.checkDisabled}>EDIT</button>
                         <button className='col-4 ml-5 btn btn-danger'>DELETE</button>
@@ -101,10 +101,11 @@ export default class PersonalInfo extends Component{
                                 </Form.Group>
                             </div>
                         </div>             
-                    </Form.Group>
-                                       
-                </Form>               
-                     
+                    </Form.Group>  
+                </Form>
+                <div className='d-flex flex-row-reverse col-10'>
+                    <button className='btn btn-success my-4 mr-5 px-5'>ENVIAR</button>
+                </div>               
             </section>
         )
     }

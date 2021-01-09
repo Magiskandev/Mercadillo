@@ -58,16 +58,16 @@ export default class CarouselApp extends React.Component {
         <Carousel className='col-10 mx-auto text-white'>
           {this.state.products.slice(0, 9).map((item, i) => {
             console.log(item,i);
-            return <Carousel.Item>
+            return <Carousel.Item style={{}}>
               <CardDeck>
                 <Card key={i} className='bg-secondary'>
-                  <Card.Img variant="top" src="holder.js/100px160" />
+                  <Card.Img variant="top" src={item.image} style={{width: '200px'}}/>
                   <Card.Body>
                     <Card.Title>{item.name}</Card.Title>
                     <Card.Text className='my-3'>
                       {item.description}
                       <p className='font-weight-bold mt-2'>{new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP' }).format(item.price -= item.price*(item.discount/100))}</p>
-
+                      <p className='btn btn-warning' style={{borderRadius:'50px', fontWeight:'bolder' }}>{item.discount}% OFF</p>
                     </Card.Text>
                     <div className="d-flex flex-row-reverse mr-0">
                       <Button variant="primary" className='col-2 ml-2 mb-3'>Comprar</Button>                      
