@@ -9,13 +9,13 @@ const Pagination = ({ productsPerPage, totalProducts, paginate }) => {
 
 
     return (
-        <nav className="container-fluid d-flex justify-content-center mt-4">
+        <nav className="container-fluid d-flex justify-content-center mt-5">
             <ul className="pagination">
                 {pageNumbers.map(number => (
                     <li key={number} className="page-item">
-                        <bitton onClick={() => paginate(number)} className='page-link btn-paginate-products'>
+                        <button onClick={() => paginate(number)} className='page-link btn-paginate-products'>
                             {number}
-                        </bitton>
+                        </button>
                     </li>
                 ))}
             </ul>

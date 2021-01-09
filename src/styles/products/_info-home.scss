@@ -1,0 +1,249 @@
+.content-section-body-info-home {
+    margin-right: 90px;
+    bottom: 120px;
+    
+}
+
+.content-global-info-tab {
+    width: 1200px;
+}
+
+.tab-info-home-style-one {
+    border-top-left-radius: 10px !important;
+    
+}
+
+.tab-info-home-style-four {
+    border-top-right-radius: 10px !important;
+}
+
+.tab-info-home-style-two,
+.tab-info-home-style-one,
+.tab-info-home-style-three,
+.tab-info-home-style-four {
+    width: 300px;
+    height: 305px;
+    background: #FFBD00;
+    cursor: pointer;
+    border: 1px solid #F9EDCC !important;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    color: #2C2C2C;
+}
+
+.tab-content-style {
+    height: 418px;
+    background: #FDFDFD;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.article-tab-one-home-one,
+.article-tab-one-home-two {
+    width: 245px;
+}
+
+.article-tab-one-home-one {
+    margin-right: 364px;
+}
+
+.subtitle-tab-info-one-home,
+.subtitle-tab-info-two-home {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    color: #2C2C2C;
+}
+
+.paragraph-tab-info-one-home,
+.paragraph-tab-info-two-home {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #2C2C2C;
+    line-height: 20px;
+}
+
+.btn-tab-one-home {
+    height: 70px;
+    background: #205EFF;
+    font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+color: #FDFDFD;
+border-radius: 5px;
+outline: none;
+border: none;
+width: 574px;
+
+&:hover {
+    background: #003CD7;
+}
+}
+
+.shoperman-style {
+    margin-top: 300px !important;
+}
+
+.vineta-tab-style {
+    left: 445.5px;
+}
+
+.vineta-tab-two-style,
+.vineta-tab-three-style,
+.vineta-tab-four-style,
+.vineta-tab-style {
+    bottom: 392px;
+}
+
+.vineta-tab-two-style {
+    left: 745.5px;
+}
+
+.vineta-tab-three-style {
+    left: 1045.5px;
+}
+
+.vineta-tab-four-style {
+    left: 1345.5px;
+}
+
+
+
+.subcatergory-content {
+    width: 108px;
+height: 60px;
+background: #C4C4C4;
+border-radius: 0px 0px 4.49299px 4.49299px;
+}
+
+.header-subcatergory-content {
+    width: 108px;
+height: 35px;
+background: #948989;
+border-radius: 5px 5px 0px 0px;
+}
+
+.subcategory-line-style {
+    width: 42px;
+height: 5.5px;
+background: #7A7A7A;
+border-radius: 14px;
+}
+
+.subcategory-img-style {
+    width: 25.5px;
+height: 16px;
+background: #7A7A7A;
+border-radius: 5px;
+}
+
+.title-subcatergory-style {
+    font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+color: #FDFDFD;
+}
+
+
+.hover-subcategory-info {
+    height: 99px;
+    width: 115px;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.master-subcategory-content-info-two:hover .hover-subcategory-info {
+    background: #3BB54A;
+    filter: blur(5px);
+}
+
+.subcategory-info-content-tab-two {
+    z-index: 2;
+}
+
+.content-subcategories-line-one {
+   margin-right: 165px;
+}
+
+.content-subcategories-line-two {
+    margin-top: 125px !important;
+    margin-left: 77.5px !important;
+}
+
+.subcategories-line-two-other-style {
+    margin-top: 125px !important;
+    margin-left: 165px !important;
+}
+
+.content-subcategories-line-three {
+    margin-top: 125px !important;
+    margin-right: 165px;
+}
+
+.subcategories-line-three-other-style {
+    margin-top: 125px !important;
+}
+
+.title-style-tab-info-three {
+    font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+width: 316px;
+color: #2C2C2C;
+}
+
+.content-icons-tab-three {
+    width: 1200px;
+}
+
+.paragraph-tab-four-style {
+    font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+color: #2C2C2C;
+width: 328px;
+}
+
+.content-tab-four-info-home {
+    width: 1200px;
+}
+
+.paragraph-testimonials-style {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: #A3A3A3;
+    width: 380px;
+}
+
+.name-testimonial-style,
+.position-testimonial-style {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.name-testimonial-style {
+    color: #2C2C2C;
+}
+
+.position-testimonial-style {
+    color:#616060;
+}
+
+.content-testimonials {
+    margin-left: 90px !important;
+    margin-right: 90px !important;
+    margin-top: 116px !important;
+}

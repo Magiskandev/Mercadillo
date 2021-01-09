@@ -1,3 +1,5 @@
-@import './base/base';
-@import './home/_index-home.scss';
-@import './utils/_variables.scss';
+@import './base/index-base';
+@import './home/_index-home';
+@import './utils/_variables';
+@import './products/index-products';
+@import './support/support-accordion'
