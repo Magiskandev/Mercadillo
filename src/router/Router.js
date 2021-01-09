@@ -4,7 +4,7 @@ import Login from '../pages/Login'
 import Register from '../pages/Register'
 import Main from '../pages/Main'
 import Profile from '../pages/Profile'
-import Home from '../pages/Home'
+import Test from '../pages/Test'
 
 class Router extends Component {
   render() {
@@ -16,7 +16,7 @@ class Router extends Component {
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/profile" component={Profile} />
-            <Route exact path="/home" component={Home} />
+            <Route exact path="/test" component={Test} />
           </Switch>
         </BrowserRouter>
       </>
