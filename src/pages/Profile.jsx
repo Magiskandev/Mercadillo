@@ -1,7 +1,8 @@
-import React from 'react';
+import React,{Component} from 'react';
 import { NavLink, Route, HashRouter } from 'react-router-dom';
 import ProfileNav from '../components/profile/ProfileNav';
 import PersonalInfo from '../components/profile/PersonalInfo';
+import ProductRegister from '../components/profile/ProductRegister';
 import NavPrincipal from '../components/base/NavPrincipal';
 import BannerProfile from '../images/jpg/banner-inscripción.jpg'
 import AvatarProfile from '../images/jpg/Avatar-profile.jpg'

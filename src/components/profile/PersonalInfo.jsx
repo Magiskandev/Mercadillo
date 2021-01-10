@@ -3,7 +3,11 @@ import Form from 'react-bootstrap/Form';
 import AddMethod from '../../images/svg/add.svg'
 
 export default class PersonalInfo extends Component {
+    constructor(props){
+        super(props)
 
+        this.addUser = this.addUser.bind(this);
+    }
     checkDisabled = () => {
         //se declaran las variables de los campos de registro de usuario
         //se puede implementar un forEach ACA
@@ -11,11 +15,11 @@ export default class PersonalInfo extends Component {
         let nameInput = document.getElementById('user-name');
         let lastnameInput = document.getElementById('user-lastname');
         let birthDateInput = document.getElementById('user-birthdate');
-        let directionInput = document.getElementById('user-direction');
+        let addressInput = document.getElementById('user-address');
         let blockedInput = document.getElementById('user-blocked');
         let aptoInput = document.getElementById('user-apto');
 
-        let formInputs = [emailInput, nameInput, lastnameInput, birthDateInput, directionInput, blockedInput, aptoInput]
+        let formInputs = [emailInput, nameInput, lastnameInput, birthDateInput, addressInput, blockedInput, aptoInput]
 
         formInputs.forEach(item => {
             if (item.hasAttribute('disabled')) {
@@ -24,6 +28,63 @@ export default class PersonalInfo extends Component {
                 item.setAttribute('disabled', "");
             }
         });
+    }
+    loadUsersData=()=>{
+        fetch('https://pruebafiltro.tiagobg.repl.co/users')
+        .then((response)=>{
+            return response.json()
+        })
+        .then((data)=>{
+            this.setState({
+                products: data
+            })
+        })
+        .catch((error)=>{
+            console.log(error)
+        })
+    }
+    addUser(e){
+        let emailInput = document.getElementById('user-email');
+        let nameInput = document.getElementById('user-name');
+        let lastnameInput = document.getElementById('user-lastname');
+        let birthDateInput = document.getElementById('user-birthdate');
+        let addressInput = document.getElementById('user-address');
+        let blockedInput = document.getElementById('user-blocked');
+        let aptoInput = document.getElementById('user-apto');
+        let passwordInput = document.getElementById('user-password');
+        
+
+
+        if(emailInput.value === '' || nameInput.value === '' || lastnameInput.value === ''  || birthDateInput.value === '' || addressInput.value === '' || blockedInput.value === '' || aptoInput.value ==='' || passwordInput.value==='' || emailInput.disabled){
+            alert("Por favor ingresa los datos requeridos")
+        } else{
+
+            let data = {
+                name: nameInput.value.trim(),
+                lastname: lastnameInput.value.trim(),
+                bithdate: birthDateInput.value.trim(),
+                email: emailInput.value.trim(),
+                address: addressInput.value.trim(),
+                block: blockedInput.value.trim(),
+                apto: aptoInput.value.trim(),
+                password: passwordInput.value.trim()
+    
+            }
+            fetch('https://pruebafiltro.tiagobg.repl.co/users', {
+                method: 'POST',
+                headers: {
+                    'Content-Type' : 'application/json'
+                },
+                body: JSON.stringify(data)            
+            })
+            .then((response)=> response.json())
+            .then((data)=>{
+                alert(`Se añade el usuario ${data.name} con id: ${data.id} `)
+                this.loadUsersData()
+                this.checkDisabled()           
+            })
+            console.log(data.name);
+        }        
     }
 
     changePassword = () => {
@@ -40,6 +101,25 @@ export default class PersonalInfo extends Component {
             }
         });
     }
+    
+    clearFields=()=>{
+        let emailInput = document.getElementById('user-email');
+        let nameInput = document.getElementById('user-name');
+        let lastnameInput = document.getElementById('user-lastname');
+        let birthDateInput = document.getElementById('user-birthdate');
+        let addressInput = document.getElementById('user-address');
+        let blockedInput = document.getElementById('user-blocked');
+        let aptoInput = document.getElementById('user-apto');
+        let passwordInput = document.getElementById('user-password');
+
+        let formInputs = [emailInput, nameInput, lastnameInput, birthDateInput,passwordInput, addressInput, blockedInput, aptoInput]
+
+        for(const input of formInputs){
+            input.value = ''
+        }
+        
+        alert('Los campos serán eliminados');  
+    }
 
     render() {
         return (
@@ -47,10 +127,10 @@ export default class PersonalInfo extends Component {
                 <div className='mb-4 d-flex justify-content-between'>
                     <div>
                         <button className='btn btn-edit-information-personal' onClick={this.checkDisabled}>Editar</button>
-                        <button className=' ml-5 btn btn-delete-information-personal'>Limpiar</button>
+                        <button className=' ml-5 btn btn-delete-information-personal' onClick={this.clearFields}>Limpiar</button>
                     </div>
                     <div>
-                        <button className='btn btn-save-information-personal'>Guardar</button>
+                        <button className='btn btn-save-information-personal' onClick={this.addUser}>Guardar</button>
                     </div>
                 </div>
                 <Form>
@@ -58,21 +138,21 @@ export default class PersonalInfo extends Component {
                         <div>
                             <div className='d-flex mb-5'>
                                 <div className='mr-4'>
-                                    <Form.Label className="title-input-profile-name">Nombre</Form.Label>
+                                    <Form.Label className="title-input-profile-name">*Nombre</Form.Label>
                                     <Form.Control className="input-profile-name" type="text" placeholder="Nombre" id='user-name' disabled />
                                 </div>
                                 <div>
-                                    <Form.Label className="title-input-profile-lastname">Apellido</Form.Label>
+                                    <Form.Label className="title-input-profile-lastname">*Apellido</Form.Label>
                                     <Form.Control className="input-profile-lastname" type="text" placeholder="Apellido" id='user-lastname' disabled />
                                 </div>
                             </div>
                             <div className="d-flex mt-4">
                                 <div className="mr-4">
-                                    <Form.Label className="title-input-profile-email">Email</Form.Label>
+                                    <Form.Label className="title-input-profile-email">*Email</Form.Label>
                                     <Form.Control className="input-profile-email" type="email" placeholder="name@example.com" id='user-email' disabled />
                                 </div>
                                 <div className="">
-                                    <Form.Label className="title-input-profile-born">Fecha de nacimiento</Form.Label>
+                                    <Form.Label className="title-input-profile-born">*Fecha de nacimiento</Form.Label>
                                     <Form.Control className="input-profile-born" type="date" id='user-birthdate' disabled />
                                 </div>
                             </div>
@@ -95,17 +175,17 @@ export default class PersonalInfo extends Component {
                             <div>
                                 <div className="">
                                     <Form.Label className="title-input-profile-direction">Dirección</Form.Label>
-                                    <Form.Control className="input-profile-direction" type="password" placeholder="Dirección" id='user-direction' disabled />
+                                    <Form.Control className="input-profile-direction" type="text" placeholder="Dirección" id='user-address' disabled />
                                 </div>
                             </div>
                             <div className="d-flex justify-content-between mt-5">
                                 <div className="">
                                     <Form.Label className="title-input-profile-blocked">Bloque</Form.Label>
-                                    <Form.Control className="input-profile-blocked" type="password" placeholder="Bloque" id='user-blocked' disabled />
+                                    <Form.Control className="input-profile-blocked" type="text" placeholder="Bloque" id='user-blocked' disabled />
                                 </div>
                                 <div className="">
                                     <Form.Label className="title-input-profile-apto">Apto</Form.Label>
-                                    <Form.Control className="input-profile-apto" type="password" placeholder="Apto" id='user-apto' disabled />
+                                    <Form.Control className="input-profile-apto" type="text" placeholder="Apto" id='user-apto' disabled />
                                 </div>
                             </div>
                             <h2 className="title-input-profile-apto mt-5">Localización</h2>
