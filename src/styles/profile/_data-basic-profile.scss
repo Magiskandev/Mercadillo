@@ -1,0 +1,238 @@
+.input-profile-name,
+.input-profile-lastname,
+.input-profile-email,
+.input-profile-born,
+.input-profile-pass,
+.input-profile-confirmpass,
+.input-profile-direction,
+.input-profile-blocked,
+.input-profile-apto {
+    background: rgba(147, 168, 255, 0.09);
+    border-radius: 32px;
+    height: 50px;
+    border: none;
+}
+
+.input-profile-name,
+.input-profile-lastname,
+.input-profile-email,
+.input-profile-born,
+.input-profile-pass,
+.input-profile-confirmpass {
+    width: 405px;
+}
+
+.input-profile-blocked,
+.input-profile-apto {
+    width: 210px;
+}
+
+.input-profile-direction {
+    width: 489px;
+}
+
+.title-input-profile-name,
+.title-input-profile-lastname,
+.title-input-profile-email,
+.title-input-profile-born,
+.title-input-profile-pass,
+.title-input-profile-confirmpass,
+.title-input-profile-direction,
+.title-input-profile-blocked,
+.title-input-profile-apto,
+.title-profile-pay {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    color: #2C2C2C;
+}
+
+.content-inputs-profile-password {
+    margin-top: 100px !important;
+}
+
+.btn-profile-change-pass {
+    width: 832px;
+    height: 50px;
+    background: #3BB54A;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    color: #FAFAFA;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-profile-change-pass:hover {
+    background: #349E41;
+    color: #FAFAFA;
+}
+
+.separator-profile-data-basic {
+    width: 2px;
+    height: 454px;
+    background: #2C2C2C;
+}
+
+.section-personal-info {
+    margin-right: 90px;
+    margin-left: 90px;
+}
+
+.map-location-user {
+    margin-top: 8px !important;
+}
+
+
+.btn-edit-information-personal  {
+    background: #205EFF;
+    width: 96px;
+}
+
+.btn-delete-information-personal {
+    width: 110px;
+    background: #BF1A42;
+}
+
+.btn-save-information-personal {
+    width: 113px;
+    background: #3BB54A;
+}
+
+
+.btn-edit-information-personal,
+.btn-delete-information-personal,
+.btn-save-information-personal {
+height: 50px;
+border-radius: 8px;
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+color: #FAFAFA;
+outline: none;
+border: none;
+}
+
+.btn-edit-information-personal:hover {
+    color: #FAFAFA;
+    background: #0046FB;
+}
+
+.btn-delete-information-personal:hover {
+    background: #A7173A;
+    color: #FAFAFA;
+}
+
+.btn-save-information-personal:hover {
+    background: #349E41;
+    color: #FAFAFA;
+}
+
+.avatar-user-profile {
+    
+}
+
+.btn-change-avatar-profile {
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+color: #FAFAFA;
+width: 190px;
+height: 30px;
+background: #F06423;
+border-radius: 5px;
+border: none;
+outline: none;
+z-index: 2;
+bottom: 10px;
+display: none;
+}
+
+.btn-change-avatar-profile:hover {
+    background: #E1520F;
+    
+}
+
+.content-avatar-profile:hover .btn-change-avatar-profile {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-avatar-profile {
+ width: 195.15px;
+height: 194.86px;
+bottom: 100px;
+    margin-left: 90px;
+    cursor: pointer;
+}
+
+.title-rol-profile-user {
+    font-family: Open Sans;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+color: #2C2C2C;
+margin-top: 54px !important;
+}
+
+.content-avatar-and-rol {
+    height: 124px;
+}
+
+.btn-products-and-services {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    color: #FAFAFA;
+    width: 367px;
+    height: 52px;
+    background: #F06423;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    top: 270px;
+    right: 90px;
+}
+
+.btn-products-and-services:hover {
+    background: #E1520F;
+}
+
+.content-seprator-profile-pay {
+    height: 2px;
+    width: 100%;
+    background: #2C2C2C;
+}
+
+.btn-add-method-pay {
+    width: 224px;
+height: 165px;
+background: #E2DFDF;
+color: #2C2C2C;
+border: none;
+outline: none;
+border-radius: 5px;
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+}
+
+.btn-add-method-pay:hover {
+    background: #2C2C2C;
+    color: #E2DFDF;
+}
+
+.btn-add-method-pay:hover .icon-method-pay {
+    stroke: #E2DFDF;
+}
+
+.icon-method-pay {
+    stroke: #2C2C2C;
+}

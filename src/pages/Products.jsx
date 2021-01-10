@@ -4,6 +4,8 @@ import CarouselApp from '../components/products/CarouselApp';
 import FilterProducts from '../components/products/FilterProducts';
 import CardInfoSection from '../components/products/CardInfoSection';
 import NavPrincipal from '../components/base/NavPrincipal';
+import BuyProduct from '../components/products/BuyProduct'
+import Footer from '../components/base/Footer'
 
 export default class Products extends Component {
     render() {
@@ -17,8 +19,11 @@ export default class Products extends Component {
                     <FilterProducts />
                     <CardInfoSection />
                 </div>
-
-                <CardProducts />
+                <div className="d-flex justify-content-between">
+                    <CardProducts />
+                    <BuyProduct />
+                </div>
+                <Footer />
             </section>
         )
     }
