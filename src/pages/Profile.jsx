@@ -4,6 +4,7 @@ import PersonalInfo from '../components/profile/PersonalInfo';
 import NavPrincipal from '../components/base/NavPrincipal';
 import BannerProfile from '../images/jpg/banner-inscripción.jpg'
 import AvatarProfile from '../images/jpg/Avatar-profile.jpg'
+import Footer from '../components/base/Footer'
 
 export default class Profile extends Component {
     render() {
@@ -23,6 +24,7 @@ export default class Profile extends Component {
                     <PersonalInfo />
                     <ProductRegister />
                 </div>
+                <Footer />
             </section>
         )
     }
