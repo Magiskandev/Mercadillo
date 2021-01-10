@@ -1,17 +1,27 @@
 import { Component } from 'react';
 import ProductRegister from '../components/profile/ProductRegister';
 import PersonalInfo from '../components/profile/PersonalInfo';
+import NavPrincipal from '../components/base/NavPrincipal';
+import BannerProfile from '../images/jpg/banner-inscripción.jpg'
+import AvatarProfile from '../images/jpg/Avatar-profile.jpg'
 
 export default class Profile extends Component {
     render() {
         return (
             <section className="global-section-home">
-                <div style={{backgroundColor: '#ffeaa7', textAlign: 'center'}}>
-                    <h1>Perfil</h1>
-                </div>                
-                <div className='ml-5'>
-                    <PersonalInfo/>
-                    <ProductRegister />                    
+                <NavPrincipal />
+                <img src={BannerProfile} className="banner-section-profile" alt="banner de la sección perfil de usuario" />
+                <button className="position-absolute btn-products-and-services">Ofrecer productos o servicios</button>
+                <div className="d-flex content-avatar-and-rol">
+                    <div className="d-flex content-avatar-profile position-relative justify-content-center mr-3">
+                        <img src={AvatarProfile} alt="" className=" avatar-user-profile" />
+                        <button className="btn-change-avatar-profile position-absolute">Editar</button>
+                    </div>
+                    <h2 className="title-rol-profile-user">Cliente</h2>
+                </div>
+                <div className=''>
+                    <PersonalInfo />
+                    <ProductRegister />
                 </div>
             </section>
         )
