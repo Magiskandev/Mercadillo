@@ -1,14 +1,17 @@
 import React from 'react'
 import Star from '../../images/png/Star.png'
+import { UseProducts } from '../../reducers/index'
 
 function BuyProduct() {
+    const { productStore, setProductStore } = UseProducts();
+    console.log(productStore)
     return (
         <section className="content-window-buy-product">
             <div className="d-flex flex-column align-items-center">
                 <div className="justify-content-center d-flex align-items-center mt-3">
                     <div className="avatar-company-buy mr-5"></div>
                     <div>
-                        <p className="title-buy-company mb-2">Nombre de la empresa</p>
+                        <p className="title-buy-company mb-2">{productStore.product.companyName}</p>
                         <button className="btn-visit-company">Visitar</button>
                     </div>
                 </div>
@@ -52,7 +55,7 @@ veniam consequat sunt nostrud amet.</p>
                 <div className="d-flex justify-content-between content-buy-total-product">
                     <div>
                         <h3 className="subtitle-buy-company">Total</h3>
-                        <p className="title-buy-product">4.900$</p>
+                        <p className="title-buy-product">{productStore.product.price}</p>
                     </div>
                     <button className="btn-buy-product">Comprar</button>
                 </div>

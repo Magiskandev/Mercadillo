@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { Card } from 'react-bootstrap'
 import { Button } from 'react-bootstrap'
 import productsTwo from './data/accessProduct'
+import { UseProducts } from '../../reducers/index'
 
 
 function CardProduct({ products, loading }) {
+  const { productStore, setProductStore } = UseProducts();
   /* const [accessProduct, setProductOne] = useState([])
   const [products, setProductTwo] = useState(product) */
 
@@ -17,6 +19,7 @@ function CardProduct({ products, loading }) {
       {products.map((product, productsTwo) => (
 
         <Card
+          onClick={() => setProductStore({ type: "setProduct", payload: { product: product } })}
           className="mt-5 card-product border-0">
           {/* //////////////////////Header Card////////////////////// */}
           <div className="d-flex mt-1 card-content-btns position-absolute">

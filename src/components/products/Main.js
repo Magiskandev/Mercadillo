@@ -5,6 +5,7 @@ import Profile from '../../pages/Profile';
 import Products from '../../pages/Products';
 import Support from '../../pages/Support';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Giphy from '../../images/gif/giphy.gif'
 
 export default function Main() {
     return (
@@ -19,6 +20,7 @@ export default function Main() {
                         <NavLink exact to='/' className='text-decoration-none section-one position-relative d-flex'>
                             <div className='ml-5 d-flex align-items-center'>
                                 <i class="fas fa-home mr-3 icon-list-nav"></i><li className='item nav-section'>Home</li>
+                                <span className='Tooltip-acces-menu'> <img className="tooltip-img-acces" src={Giphy} alt="" /></span>
                             </div>
                         </NavLink>
 
@@ -26,6 +28,7 @@ export default function Main() {
                             <div className='ml-5 d-flex align-items-center'>
                                 <i class="fas fa-shopping-cart mr-3 icon-list-nav ">
                                 </i><li className='item nav-section'>Productos</li>
+                                <span className='Tooltip-acces-menu'> <img className="tooltip-img-acces" src={Giphy} alt="" /></span>
                             </div>
                         </NavLink>
 
@@ -33,18 +36,21 @@ export default function Main() {
                             <div className='ml-5 d-flex align-items-center'>
                                 <i class="fas fa-user mr-3 icon-list-nav"></i><li className='item nav-section'>Perfil</li>
                             </div>
+                            <span className='Tooltip-acces-menu'> <img className="tooltip-img-acces" src={Giphy} alt="" /></span>
                         </NavLink>
 
                         <NavLink to='/soporte' className='text-decoration-none section-four position-relative d-flex'>
                             <div className='ml-5 d-flex align-items-center'>
                                 <i class="fas fa-question-circle mr-3 icon-list-nav"></i><li className='item nav-section'>Soporte</li>
                             </div>
+                            <span className='Tooltip-acces-menu'> <img className="tooltip-img-acces" src={Giphy} alt="" /></span>
                         </NavLink>
 
                         <NavLink to='/soporte' className='text-decoration-none section-five position-relative d-flex'>
                             <div className='ml-5 d-flex align-items-center'>
                                 <i class="fas fa-sign-out-alt mr-3 icon-list-nav"></i><li className='item nav-section'>Cerrar sesión</li>
                             </div>
+                            <span className='Tooltip-acces-menu'> <img className="tooltip-img-acces" src={Giphy} alt="" /></span>
                         </NavLink>
                     </div>
                 </ul>

@@ -80,3 +80,64 @@
     color: #2C2C2C;;
     font-size: 20px;
 }
+
+.Tooltip-acces-menu {
+    display: none;
+    position: absolute;
+    background: #FDFDFD;
+    z-index: 2;
+    border-radius: 10px;
+    width: 194px;
+    height: 135px;
+    left: 320px;
+    top: -2px;
+    box-shadow: 0px 3px 22px rgba(0, 0, 0, 0.25);
+}
+
+.Tooltip-acces-menu::after {
+    content: "";
+    display: block;
+    border-top: 15px solid #FDFDFD;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    position: absolute;
+    left: -22px;
+    bottom: 98px;
+    transform: rotate(90deg);
+}
+
+.tooltip-img-acces {
+    width: 142px;
+    height: 104px;
+    border-radius: 5px;
+}
+
+.section-one:hover .Tooltip-acces-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-two:hover .Tooltip-acces-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-three:hover .Tooltip-acces-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-four:hover .Tooltip-acces-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-five:hover .Tooltip-acces-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
