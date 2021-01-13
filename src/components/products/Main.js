@@ -5,7 +5,11 @@ import Profile from '../../pages/Profile';
 import Products from '../../pages/Products';
 import Support from '../../pages/Support';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Giphy from '../../images/gif/giphy.gif';
+import HomeGif from '../../images/gif/Inicio.gif';
+import ProductsGif from '../../images/gif/producto.gif';
+import ProfileGif from '../../images/gif/perfil.gif';
+import SupportGif from '../../images/gif/soporte.gif';
+import CloseGif from '../../images/gif/cerrar-sesión.gif';
 import useSound from 'use-sound';
 import HomeSound from './../../audio/inicio.mp4'
 import ProductSound from './../../audio/productos.mp4'
@@ -34,7 +38,7 @@ export default function Main() {
                         <NavLink onClick={play} exact to='/' className='text-decoration-none section-one position-relative d-flex'>
                             <div className='ml-5 d-flex align-items-center'>
                                 <i class="fas fa-home mr-3 icon-list-nav"></i><li className='item nav-section'>Home</li>
-                                <span className='Tooltip-acces-menu'> <img className="tooltip-img-acces" src={Giphy} alt="" /></span>
+                                <span className='Tooltip-acces-menu'> <img className="tooltip-img-acces" src={HomeGif} alt="" /></span>
                             </div>
                         </NavLink>
 
@@ -42,7 +46,7 @@ export default function Main() {
                             <div className='ml-5 d-flex align-items-center'>
                                 <i class="fas fa-shopping-cart mr-3 icon-list-nav ">
                                 </i><li className='item nav-section'>Productos</li>
-                                <span className='Tooltip-acces-menu'> <img className="tooltip-img-acces" src={Giphy} alt="" /></span>
+                                <span className='Tooltip-acces-menu'> <img className="tooltip-img-acces" src={ProductsGif} alt="" /></span>
                             </div>
                         </NavLink>
 
@@ -50,21 +54,21 @@ export default function Main() {
                             <div className='ml-5 d-flex align-items-center'>
                                 <i class="fas fa-user mr-3 icon-list-nav"></i><li className='item nav-section'>Perfil</li>
                             </div>
-                            <span className='Tooltip-acces-menu'> <img className="tooltip-img-acces" src={Giphy} alt="" /></span>
+                            <span className='Tooltip-acces-menu'> <img className="tooltip-img-acces" src={ProfileGif} alt="" /></span>
                         </NavLink>
 
                         <NavLink onClick={play3} to='/soporte' className='text-decoration-none section-four position-relative d-flex'>
                             <div className='ml-5 d-flex align-items-center'>
                                 <i class="fas fa-question-circle mr-3 icon-list-nav"></i><li className='item nav-section'>Soporte</li>
                             </div>
-                            <span className='Tooltip-acces-menu'> <img className="tooltip-img-acces" src={Giphy} alt="" /></span>
+                            <span className='Tooltip-acces-menu'> <img className="tooltip-img-acces" src={SupportGif} alt="" /></span>
                         </NavLink>
 
                         <NavLink onClick={play4} to='/soporte' className='text-decoration-none section-five position-relative d-flex'>
                             <div className='ml-5 d-flex align-items-center'>
                                 <i class="fas fa-sign-out-alt mr-3 icon-list-nav"></i><li className='item nav-section'>Cerrar sesión</li>
                             </div>
-                            <span className='Tooltip-acces-menu'> <img className="tooltip-img-acces" src={Giphy} alt="" /></span>
+                            <span className='Tooltip-acces-menu'> <img className="tooltip-img-acces" src={CloseGif} alt="" /></span>
                         </NavLink>
                     </div>
                 </ul>
