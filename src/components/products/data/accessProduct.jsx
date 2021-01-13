@@ -2,7 +2,7 @@ const accessProduct = [
 
     {
         "companyLogo": "fas fa-building",
-        "companyName": "Nombre de la empresa",
+        "companyName": "Pepe ganga",
         "image": "https://i.linio.com/p/c5196266d4cefe7570ec5812f41554ed-product.webp",
         "title": "Silla De Ruedas",
         "price": "355.000$",
@@ -13,7 +13,7 @@ const accessProduct = [
     },
     {
         "companyLogo": "fas fa-building",
-        "companyName": "Nombre de la empresa",
+        "companyName": "Distribuidor LLC",
         "image": "https://masaudio.cl/dependencias/imagenes/audifono-intracanal-interno-cic.png",
         "title": "Audífono intracanal interno",
         "price": "2.700.000$",
@@ -24,7 +24,7 @@ const accessProduct = [
     },
     {
         "companyLogo": "fas fa-building",
-        "companyName": "Nombre de la empresa",
+        "companyName": "Montoyita",
         "image": "https://http2.mlstatic.com/D_NQ_NP_892616-MCO40939536494_022020-O.webp",
         "title": "Tdcs Device Transcranial Direct Current Brain Stimulator",
         "price": "850.000$",
@@ -35,7 +35,7 @@ const accessProduct = [
     },
     {
         "companyLogo": "fas fa-building",
-        "companyName": "Nombre de la empresa",
+        "companyName": "Maria del mar",
         "image": "https://ver.com.co/wp-content/uploads/2019/08/Ver-JAWS_Professional_Edition.jpg",
         "title": "Software lector de pantalla – JAWS para Windows",
         "price": "1,452.000$",
@@ -46,7 +46,7 @@ const accessProduct = [
     },
     {
         "companyLogo": "fas fa-building",
-        "companyName": "Nombre de la empresa",
+        "companyName": "Accesibilidad para todos",
         "image": "https://www.neuronup.com/img/webinar_landing.png",
         "title": "neuronup",
         "price": "?$",
@@ -57,7 +57,7 @@ const accessProduct = [
     },
     {
         "companyLogo": "fas fa-building",
-        "companyName": "Nombre de la empresa",
+        "companyName": "Electro max",
         "image": "https://http2.mlstatic.com/D_NQ_NP_721638-MCO43793529578_102020-O.webp",
         "title": "Agarradera Pasa Manos Ayudante Portátil",
         "likeIcon": "far fa-heart",
@@ -67,7 +67,7 @@ const accessProduct = [
     },
     {
         "companyLogo": "fas fa-building",
-        "companyName": "Nombre de la empresa",
+        "companyName": "Acces",
         "image": "https://www.neuronup.com/img/webinar_landing.png",
         "title": "neuronup",
         "price": "?$",
@@ -78,7 +78,7 @@ const accessProduct = [
     },
     {
         "companyLogo": "fas fa-building",
-        "companyName": "Nombre de la empresa",
+        "companyName": "Multidistribuidora",
         "image": "https://http2.mlstatic.com/D_NQ_NP_740183-MCO29494389872_022019-O.webp",
         "title": "Ejercitador De Dedos Fortalecedor De Manos Y Muñeca",
         "price": "211.990$",
@@ -89,7 +89,7 @@ const accessProduct = [
     },
     {
         "companyLogo": "fas fa-building",
-        "companyName": "Nombre de la empresa",
+        "companyName": "Rinde mas",
         "image": "https://http2.mlstatic.com/D_NQ_NP_756342-MCO42122904685_062020-O.webp",
         "title": "Capturador De Largo Alcance Norpro",
         "price": "109.900$",
@@ -101,7 +101,7 @@ const accessProduct = [
     /* repetidos */
     {
         "companyLogo": "fas fa-building",
-        "companyName": "Nombre de la empresa",
+        "companyName": "Explandy",
         "image": "https://i.linio.com/p/c5196266d4cefe7570ec5812f41554ed-product.webp",
         "title": "Silla De Ruedas",
         "price": "355.000$",
@@ -112,7 +112,7 @@ const accessProduct = [
     },
     {
         "companyLogo": "fas fa-building",
-        "companyName": "Nombre de la empresa",
+        "companyName": "Almacenes Exito",
         "image": "https://masaudio.cl/dependencias/imagenes/audifono-intracanal-interno-cic.png",
         "title": "Audífono intracanal interno",
         "price": "2.700.000$",
@@ -123,7 +123,7 @@ const accessProduct = [
     },
     {
         "companyLogo": "fas fa-building",
-        "companyName": "Nombre de la empresa",
+        "companyName": "Compra todo",
         "image": "https://http2.mlstatic.com/D_NQ_NP_892616-MCO40939536494_022020-O.webp",
         "title": "Tdcs Device Transcranial Direct Current Brain Stimulator",
         "price": "850.000$",
@@ -134,7 +134,7 @@ const accessProduct = [
     },
     {
         "companyLogo": "fas fa-building",
-        "companyName": "Nombre de la empresa",
+        "companyName": "Flinex",
         "image": "https://ver.com.co/wp-content/uploads/2019/08/Ver-JAWS_Professional_Edition.jpg",
         "title": "Software lector de pantalla – JAWS para Windows",
         "price": "1,452.000$",
@@ -145,7 +145,7 @@ const accessProduct = [
     },
     {
         "companyLogo": "fas fa-building",
-        "companyName": "Nombre de la empresa",
+        "companyName": "El caribe",
         "image": "https://www.neuronup.com/img/webinar_landing.png",
         "title": "neuronup",
         "price": "?$",
@@ -156,7 +156,7 @@ const accessProduct = [
     },
     {
         "companyLogo": "fas fa-building",
-        "companyName": "Nombre de la empresa",
+        "companyName": "Max x Menos",
         "image": "https://http2.mlstatic.com/D_NQ_NP_721638-MCO43793529578_102020-O.webp",
         "title": "Agarradera Pasa Manos Ayudante Portátil",
         "price": "26.200$",
@@ -167,7 +167,7 @@ const accessProduct = [
     },
     {
         "companyLogo": "fas fa-building",
-        "companyName": "Nombre de la empresa",
+        "companyName": "A B C",
         "image": "https://www.neuronup.com/img/webinar_landing.png",
         "title": "neuronup",
         "price": "?$",
@@ -178,7 +178,7 @@ const accessProduct = [
     },
     {
         "companyLogo": "fas fa-building",
-        "companyName": "Nombre de la empresa",
+        "companyName": "Pepe Ganga",
         "image": "https://http2.mlstatic.com/D_NQ_NP_740183-MCO29494389872_022019-O.webp",
         "title": "Ejercitador De Dedos Fortalecedor De Manos Y Muñeca",
         "price": "211.990$",
@@ -189,7 +189,7 @@ const accessProduct = [
     },
     {
         "companyLogo": "fas fa-building",
-        "companyName": "Nombre de la empresa",
+        "companyName": "Contributors",
         "image": "https://http2.mlstatic.com/D_NQ_NP_756342-MCO42122904685_062020-O.webp",
         "title": "Capturador De Largo Alcance Norpro",
         "price": "109.900$",
@@ -200,7 +200,7 @@ const accessProduct = [
     },
     {
         "companyLogo": "fas fa-building",
-        "companyName": "Nombre de la empresa",
+        "companyName": "Miscélanea Claudia",
         "image": "https://i.linio.com/p/c5196266d4cefe7570ec5812f41554ed-product.webp",
         "title": "Silla De Ruedas",
         "price": "355.000$",
@@ -211,7 +211,7 @@ const accessProduct = [
     },
     {
         "companyLogo": "fas fa-building",
-        "companyName": "Nombre de la empresa",
+        "companyName": "Artelux",
         "image": "https://masaudio.cl/dependencias/imagenes/audifono-intracanal-interno-cic.png",
         "title": "Audífono intracanal interno",
         "price": "2.700.000$",
@@ -222,7 +222,7 @@ const accessProduct = [
     },
     {
         "companyLogo": "fas fa-building",
-        "companyName": "Nombre de la empresa",
+        "companyName": "Artitodo",
         "image": "https://http2.mlstatic.com/D_NQ_NP_892616-MCO40939536494_022020-O.webp",
         "title": "Tdcs Device Transcranial Direct Current Brain Stimulator",
         "price": "850.000$",

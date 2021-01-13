@@ -4,8 +4,12 @@ import Twitter from '../../images/png/Twitter.png'
 import Facebook from '../../images/png/Facebook.png'
 import AgileInnova from '../../images/png/Icon-Agile-Innova.png'
 import IconMakaia from '../../images/png/Icon-makaia.png'
+import useSound from 'use-sound';
+import SubSound from '../../audio/suscribirse.mp4';
 
 function Footer() {
+    const [play5] = useSound(SubSound);
+
     return (
         <footer className="content-footer-global">
 
@@ -20,7 +24,7 @@ function Footer() {
                         <p className="paragraph-novelties-footer mb-3">Recibe todas las novedades y todas las ofertas que tenemos para ti.</p>
                         <div>
                             <input className="newsletter-input-footer px-3" type="email" placeholder="example@hotmail.com" />
-                            <button className="btn-subs-footer">Suscribirse</button>
+                            <button onClick={play5} className="btn-subs-footer">Suscribirse</button>
                         </div>
                     </div>
                     <div className="d-flex content-global-contact">

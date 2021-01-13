@@ -1,15 +1,25 @@
 import React from 'react'
 import Star from '../../images/png/Star.png'
+import { UseProducts } from '../../reducers/index'
+import VisitSound from './../../audio/visitar.mp4';
+import SendSound from './../../audio/enviar.mp4';
+import BuySound from './../../audio/comprar.mp4';
+import useSound from 'use-sound';
 
 function BuyProduct() {
+    const [play8] = useSound(VisitSound);
+    const [play9] = useSound(SendSound);
+    const [play10] = useSound(BuySound);
+    const { productStore, setProductStore } = UseProducts();
+    console.log(productStore)
     return (
         <section className="content-window-buy-product">
             <div className="d-flex flex-column align-items-center">
                 <div className="justify-content-center d-flex align-items-center mt-3">
                     <div className="avatar-company-buy mr-5"></div>
                     <div>
-                        <p className="title-buy-company mb-2">Nombre de la empresa</p>
-                        <button className="btn-visit-company">Visitar</button>
+                        <p className="title-buy-company mb-2">{productStore.product.company}</p>
+                        <button onClick={play8} className="btn-visit-company">Visitar</button>
                     </div>
                 </div>
                 <div className="d-flex align-items-center mt-4">
@@ -26,10 +36,7 @@ function BuyProduct() {
                             <p>4.5</p>
                         </div>
                     </div>
-                    <p className="paragraph-buy-company mt-2">Amet minim mollit non deserunt ullamco est
-                    sit aliqua dolor do amet sint. Velit officia
-                    consequat duis enim velit mollit. Exercitation
-veniam consequat sunt nostrud amet.</p>
+                    <p className="paragraph-buy-company mt-2">{productStore.product.description}</p>
                 </div>
                 <div className="d-flex align-items-center mt-4 mb-4">
                     <h3 className="title-buy-product mr-3">Contacto</h3>
@@ -37,7 +44,7 @@ veniam consequat sunt nostrud amet.</p>
                 </div>
                 <textarea name="" id="" cols="30" rows="10" className="textarea-buy-company"></textarea>
                 <div className="d-flex justify-content-end content-btn-send-buy-company mt-2">
-                    <button className="btn-send-buy-company">Enviar</button>
+                    <button onClick={play9} className="btn-send-buy-company">Enviar</button>
                 </div>
                 <div className="d-flex align-items-center mt-4 mb-4 flex-column">
                     <div className="d-flex align-items-center">
@@ -52,9 +59,9 @@ veniam consequat sunt nostrud amet.</p>
                 <div className="d-flex justify-content-between content-buy-total-product">
                     <div>
                         <h3 className="subtitle-buy-company">Total</h3>
-                        <p className="title-buy-product">4.900$</p>
+                        <p className="title-buy-product">{productStore.product.price}</p>
                     </div>
-                    <button className="btn-buy-product">Comprar</button>
+                    <button onClick={play10} className="btn-buy-product">Comprar</button>
                 </div>
             </div>
         </section>

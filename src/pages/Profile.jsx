@@ -1,4 +1,4 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
 import { NavLink, Route, HashRouter } from 'react-router-dom';
 import ProfileNav from '../components/profile/ProfileNav';
 import PersonalInfo from '../components/profile/PersonalInfo';
@@ -8,7 +8,9 @@ import BannerProfile from '../images/jpg/banner-inscripción.jpg'
 import AvatarProfile from '../images/jpg/Avatar-profile.jpg'
 import Footer from '../components/base/Footer'
 
+
 export default class Profile extends Component {
+
     render() {
         return (
             <section className="global-section-home">

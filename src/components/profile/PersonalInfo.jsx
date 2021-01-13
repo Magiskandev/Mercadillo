@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form';
 import AddMethod from '../../images/svg/add.svg'
 
 export default class PersonalInfo extends Component {
-    constructor(props){
+    constructor(props) {
         super(props)
 
         this.addUser = this.addUser.bind(this);
@@ -29,21 +29,21 @@ export default class PersonalInfo extends Component {
             }
         });
     }
-    loadUsersData=()=>{
+    loadUsersData = () => {
         fetch('https://pruebafiltro.tiagobg.repl.co/users')
-        .then((response)=>{
-            return response.json()
-        })
-        .then((data)=>{
-            this.setState({
-                products: data
+            .then((response) => {
+                return response.json()
             })
-        })
-        .catch((error)=>{
-            console.log(error)
-        })
+            .then((data) => {
+                this.setState({
+                    products: data
+                })
+            })
+            .catch((error) => {
+                console.log(error)
+            })
     }
-    addUser(e){
+    addUser(e) {
         let emailInput = document.getElementById('user-email');
         let nameInput = document.getElementById('user-name');
         let lastnameInput = document.getElementById('user-lastname');
@@ -52,12 +52,12 @@ export default class PersonalInfo extends Component {
         let blockedInput = document.getElementById('user-blocked');
         let aptoInput = document.getElementById('user-apto');
         let passwordInput = document.getElementById('user-password');
-        
 
 
-        if(emailInput.value === '' || nameInput.value === '' || lastnameInput.value === ''  || birthDateInput.value === '' || addressInput.value === '' || blockedInput.value === '' || aptoInput.value ==='' || passwordInput.value==='' || emailInput.disabled){
+
+        if (emailInput.value === '' || nameInput.value === '' || lastnameInput.value === '' || birthDateInput.value === '' || addressInput.value === '' || blockedInput.value === '' || aptoInput.value === '' || passwordInput.value === '' || emailInput.disabled) {
             alert("Por favor ingresa los datos requeridos")
-        } else{
+        } else {
 
             let data = {
                 name: nameInput.value.trim(),
@@ -68,29 +68,28 @@ export default class PersonalInfo extends Component {
                 block: blockedInput.value.trim(),
                 apto: aptoInput.value.trim(),
                 password: passwordInput.value.trim()
-    
+
             }
             fetch('https://pruebafiltro.tiagobg.repl.co/users', {
                 method: 'POST',
                 headers: {
-                    'Content-Type' : 'application/json'
+                    'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(data)            
+                body: JSON.stringify(data)
             })
-            .then((response)=> response.json())
-            .then((data)=>{
-                alert(`Se añade el usuario ${data.name} con id: ${data.id} `)
-                this.loadUsersData()
-                this.checkDisabled()           
-            })
+                .then((response) => response.json())
+                .then((data) => {
+                    alert(`Se añade el usuario ${data.name} con id: ${data.id} `)
+                    this.loadUsersData()
+                    this.checkDisabled()
+                })
             console.log(data.name);
-        }        
+        }
     }
 
     changePassword = () => {
         let passwordInput = document.getElementById('user-password')
         let passwordConfirmation = document.getElementById('confirm-password')
-
         let passwordsFields = [passwordInput, passwordConfirmation]
 
         passwordsFields.forEach(item => {
@@ -101,8 +100,8 @@ export default class PersonalInfo extends Component {
             }
         });
     }
-    
-    clearFields=()=>{
+
+    clearFields = () => {
         let emailInput = document.getElementById('user-email');
         let nameInput = document.getElementById('user-name');
         let lastnameInput = document.getElementById('user-lastname');
@@ -112,13 +111,13 @@ export default class PersonalInfo extends Component {
         let aptoInput = document.getElementById('user-apto');
         let passwordInput = document.getElementById('user-password');
 
-        let formInputs = [emailInput, nameInput, lastnameInput, birthDateInput,passwordInput, addressInput, blockedInput, aptoInput]
+        let formInputs = [emailInput, nameInput, lastnameInput, birthDateInput, passwordInput, addressInput, blockedInput, aptoInput]
 
-        for(const input of formInputs){
+        for (const input of formInputs) {
             input.value = ''
         }
-        
-        alert('Los campos serán eliminados');  
+
+        alert('Los campos serán eliminados');
     }
 
     render() {
