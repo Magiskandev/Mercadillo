@@ -18,7 +18,7 @@ function BuyProduct() {
                 <div className="justify-content-center d-flex align-items-center mt-3">
                     <div className="avatar-company-buy mr-5"></div>
                     <div>
-                        <p className="title-buy-company mb-2">{productStore.product.companyName}</p>
+                        <p className="title-buy-company mb-2">{productStore.product.company}</p>
                         <button onClick={play8} className="btn-visit-company">Visitar</button>
                     </div>
                 </div>
@@ -36,10 +36,7 @@ function BuyProduct() {
                             <p>4.5</p>
                         </div>
                     </div>
-                    <p className="paragraph-buy-company mt-2">Amet minim mollit non deserunt ullamco est
-                    sit aliqua dolor do amet sint. Velit officia
-                    consequat duis enim velit mollit. Exercitation
-veniam consequat sunt nostrud amet.</p>
+                    <p className="paragraph-buy-company mt-2">{productStore.product.description}</p>
                 </div>
                 <div className="d-flex align-items-center mt-4 mb-4">
                     <h3 className="title-buy-product mr-3">Contacto</h3>

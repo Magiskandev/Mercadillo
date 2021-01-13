@@ -8,7 +8,7 @@ const CardProducts = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
-    const [productsPerPage] = useState(5);
+    const [productsPerPage] = useState(15);
     /* Product two */
     const [productsAccess] = useState(productsTwo);
     const [currentPageTwo, setCurrentPageTwo] = useState(1);

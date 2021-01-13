@@ -43,14 +43,14 @@ function CardProduct({ products, loading }) {
                     align-items-center card-header-span">
                 <i className={`${product.companyLogo} card-company-logo`}></i>
               </span>
-              <h3 className="card-company-name pl-2">{product.companyName}</h3>
+              <h3 className="card-company-name pl-2">{product.company}</h3>
             </div>
 
 
             <div className="d-flex justify-content-center">
               <Button onClick={play7} variant="primary" className="card-btn-add"
                 style={{ background: product.backgroundButton }}>
-                {product.txtBtn}</Button>
+                Agregar</Button>
             </div>
 
             {/* //////////////////////Body////////////////////// */}
@@ -59,7 +59,7 @@ function CardProduct({ products, loading }) {
             <div className="d-flex justify-content-between px-1 global-content-footer-card-product
             align-items-end">
               <Card.Title className="card-title-footer">
-                {product.title}</Card.Title>
+                {product.name}</Card.Title>
               <Card.Title className="card-title-two-footer pl-2">
                 {product.price}</Card.Title>
             </div>
