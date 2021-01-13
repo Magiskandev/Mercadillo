@@ -5,9 +5,23 @@ import Profile from '../../pages/Profile';
 import Products from '../../pages/Products';
 import Support from '../../pages/Support';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Giphy from '../../images/gif/giphy.gif'
+import Giphy from '../../images/gif/giphy.gif';
+import useSound from 'use-sound';
+import HomeSound from './../../audio/inicio.mp4'
+import ProductSound from './../../audio/productos.mp4'
+import ProfileSound from './../../audio/Perfil.mp4'
+import SupportSound from './../../audio/soporte.mp4'
+import CloseSound from './../../audio/cerrar-sesión.mp4'
+
 
 export default function Main() {
+
+    const [play] = useSound(HomeSound);
+    const [play1] = useSound(ProductSound);
+    const [play2] = useSound(ProfileSound);
+    const [play3] = useSound(SupportSound);
+    const [play4] = useSound(CloseSound);
+
     return (
         <HashRouter>
             <section className='app'>
@@ -17,14 +31,14 @@ export default function Main() {
                     <div className='line-section position-relative'></div>
                     <div className='line-section-two position-relative'></div>
                     <div className='align-items-center'>
-                        <NavLink exact to='/' className='text-decoration-none section-one position-relative d-flex'>
+                        <NavLink onClick={play} exact to='/' className='text-decoration-none section-one position-relative d-flex'>
                             <div className='ml-5 d-flex align-items-center'>
                                 <i class="fas fa-home mr-3 icon-list-nav"></i><li className='item nav-section'>Home</li>
                                 <span className='Tooltip-acces-menu'> <img className="tooltip-img-acces" src={Giphy} alt="" /></span>
                             </div>
                         </NavLink>
 
-                        <NavLink to='/productos' className='text-decoration-none section-two position-relative d-flex'>
+                        <NavLink onClick={play1} to='/productos' className='text-decoration-none section-two position-relative d-flex'>
                             <div className='ml-5 d-flex align-items-center'>
                                 <i class="fas fa-shopping-cart mr-3 icon-list-nav ">
                                 </i><li className='item nav-section'>Productos</li>
@@ -32,21 +46,21 @@ export default function Main() {
                             </div>
                         </NavLink>
 
-                        <NavLink to='/perfil' className='text-decoration-none section-three position-relative d-flex'>
+                        <NavLink onClick={play2} to='/perfil' className='text-decoration-none section-three position-relative d-flex'>
                             <div className='ml-5 d-flex align-items-center'>
                                 <i class="fas fa-user mr-3 icon-list-nav"></i><li className='item nav-section'>Perfil</li>
                             </div>
                             <span className='Tooltip-acces-menu'> <img className="tooltip-img-acces" src={Giphy} alt="" /></span>
                         </NavLink>
 
-                        <NavLink to='/soporte' className='text-decoration-none section-four position-relative d-flex'>
+                        <NavLink onClick={play3} to='/soporte' className='text-decoration-none section-four position-relative d-flex'>
                             <div className='ml-5 d-flex align-items-center'>
                                 <i class="fas fa-question-circle mr-3 icon-list-nav"></i><li className='item nav-section'>Soporte</li>
                             </div>
                             <span className='Tooltip-acces-menu'> <img className="tooltip-img-acces" src={Giphy} alt="" /></span>
                         </NavLink>
 
-                        <NavLink to='/soporte' className='text-decoration-none section-five position-relative d-flex'>
+                        <NavLink onClick={play4} to='/soporte' className='text-decoration-none section-five position-relative d-flex'>
                             <div className='ml-5 d-flex align-items-center'>
                                 <i class="fas fa-sign-out-alt mr-3 icon-list-nav"></i><li className='item nav-section'>Cerrar sesión</li>
                             </div>
@@ -63,4 +77,4 @@ export default function Main() {
             </section>
         </HashRouter>
     )
-}  
+}

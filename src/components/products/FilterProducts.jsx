@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
 import { TabContent, TabPane, Nav, NavItem } from 'reactstrap';
-import FilterTabOne from './FilterTabOne'
+import FilterTabOne from './FilterTabOne';
+import AccesSound from './../../audio/accesibilidad.mp4';
+import useSound from 'use-sound';
+
 
 function FilterProducts() {
+    const [play6] = useSound(AccesSound);
     const [activeTab, setActiveTab] = useState('1');
 
     const toggle = tab => {
@@ -12,7 +16,7 @@ function FilterProducts() {
     return (
         <div className="content-global-filter-tab">
             <Nav tabs>
-                <NavItem>
+                <NavItem onClick={play6}>
                     <p
                         className="tab-filter-products-one justify-content-center d-flex align-items-center
               px-4 flex-column"

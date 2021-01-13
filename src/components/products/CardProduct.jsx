@@ -3,9 +3,12 @@ import { Card } from 'react-bootstrap'
 import { Button } from 'react-bootstrap'
 import productsTwo from './data/accessProduct'
 import { UseProducts } from '../../reducers/index'
+import AddSound from './../../audio/agregar.mp4';
+import useSound from 'use-sound';
 
 
 function CardProduct({ products, loading }) {
+  const [play7] = useSound(AddSound);
   const { productStore, setProductStore } = UseProducts();
   /* const [accessProduct, setProductOne] = useState([])
   const [products, setProductTwo] = useState(product) */
@@ -45,7 +48,7 @@ function CardProduct({ products, loading }) {
 
 
             <div className="d-flex justify-content-center">
-              <Button variant="primary" className="card-btn-add"
+              <Button onClick={play7} variant="primary" className="card-btn-add"
                 style={{ background: product.backgroundButton }}>
                 {product.txtBtn}</Button>
             </div>

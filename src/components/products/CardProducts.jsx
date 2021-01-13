@@ -17,7 +17,7 @@ const CardProducts = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             setLoading(true);
-            const res = await axios.get('https://my-json-server.typicode.com/Tech-Code1/Products/products');
+            const res = await axios.get('https://pruebafiltro.tiagobg.repl.co/products');
             setProducts(res.data);
             setLoading(false);
         }
@@ -48,7 +48,7 @@ const CardProducts = () => {
 
 
                 <CardProduct
-                    products={currentProductsTwo}
+                    products={currentProducts}
                 />
 
                 <Pagination
