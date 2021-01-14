@@ -5,12 +5,13 @@ import AccesSound from './../../audio/accesibilidad.mp4';
 import useSound from 'use-sound';
 import { UseProducts } from '../../reducers/index'
 
-function FilterProducts() {
+function FilterProducts({ setCategory }) {
     const [play6] = useSound(AccesSound);
     const [activeTab, setActiveTab] = useState('1');
 
     const [products, setProducts] = useState([]);
     const renderCategory = e => {
+
         console.log("heyyy", e.target.innerText);
         const searchedCategory = e.target.innerText.toLowerCase().trim();
         fetch("https://pruebafiltro.tiagobg.repl.co/products")
@@ -19,6 +20,7 @@ function FilterProducts() {
                 const products = data;
                 products.map((item, i) => {
                     if (item.category.toLowerCase().trim() === searchedCategory) {
+                        setCategory(item.category)
                         return setProducts({ products: item });
                     }
                 });
@@ -39,7 +41,8 @@ function FilterProducts() {
                         className="tab-filter-products-one justify-content-center d-flex align-items-center
               px-4 flex-column"
                         onClick={() => { toggle('1'); }}
-                        value="Accesibilidad"><i class="fas fa-universal-access mb-4 icon-tab-filter-products-one">Accesibilidad</i></p>
+                        value="Accesibilidad"><i class="fas fa-universal-access icon-tab-filter-products-one  mb-4">
+                        </i>Accesibilidad</p>
                 </NavItem>
                 <NavItem onClick={renderCategory} value="Restaurantes">
                     <p

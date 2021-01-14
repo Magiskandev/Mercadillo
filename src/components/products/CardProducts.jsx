@@ -4,7 +4,7 @@ import Pagination from './Pagination'
 import axios from 'axios'
 import productsTwo from './data/accessProduct'
 
-const CardProducts = () => {
+const CardProducts = ({ category }) => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
@@ -15,15 +15,20 @@ const CardProducts = () => {
     const [productsPerPageTwo] = useState(15);
 
     useEffect(() => {
-        const fetchProducts = async () => {
-            setLoading(true);
-            const res = await axios.get('https://pruebafiltro.tiagobg.repl.co/products');
-            setProducts(res.data);
-            setLoading(false);
-        }
-
         fetchProducts();
     }, [])
+    useEffect(() => {
+        const filter = products.filter(item => item.category === category);
+        setProducts(filter);
+    }, [category])
+
+    const fetchProducts = async () => {
+        setLoading(true);
+        const res = await axios.get('https://pruebafiltro.tiagobg.repl.co/products');
+        setProducts(res.data);
+        setLoading(false);
+    }
+
 
     /* Get current products */
     const indexOfLastProduct = currentPage * productsPerPage;
@@ -46,7 +51,7 @@ const CardProducts = () => {
                 className="container-fluid d-flex
         flex-wrap h-auto section-cards-global justify-content-between px-3">
 
-
+                <button onClick={() => fetchProducts()}>resetear filtro</button>
                 <CardProduct
                     products={currentProducts}
                 />
@@ -79,3 +84,4 @@ const CardProducts = () => {
 }
 
 export default CardProducts
+

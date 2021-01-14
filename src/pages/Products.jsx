@@ -10,8 +10,17 @@ import { ContextProduct } from '../reducers/index'
 
 export default class Products extends Component {
 
+    state = {
+        category: ""
+    }
+
+    setCategory = (category) => {
+        console.log(category);
+        this.setState({ category });
+    }
 
     render() {
+
         return (
             <section className="global-section-home">
                 <ContextProduct>
@@ -20,11 +29,11 @@ export default class Products extends Component {
                         <CarouselApp />
                     </div>
                     <div className="d-flex justify-content-between">
-                        <FilterProducts />
+                        <FilterProducts setCategory={this.setCategory} />
                         <CardInfoSection />
                     </div>
                     <div className="d-flex justify-content-between">
-                        <CardProducts />
+                        <CardProducts category={this.state.category} />
                         <BuyProduct />
                     </div>
                     <Footer />
