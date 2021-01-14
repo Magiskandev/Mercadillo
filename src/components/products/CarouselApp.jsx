@@ -53,13 +53,13 @@ export default class CarouselApp extends React.Component {
   render() {
     // this.loadPromotions();    
     return (
-      <section className='container-fluid mt-5'>
+      <section className='content-carrousel-products mt-5'>
         <div className="mt-5">
-          <button className='btn btn-warning mx-2 mt-5' onClick={this.loadPromotions}>Promociones</button>
-          <button className='btn btn-warning mx-2 mt-5' onClick={this.loadPopulars}>Los más buscados</button>
+          <button className='btn btn-warning mr-3 mt-5' onClick={this.loadPromotions}>Promociones</button>
+          <button className='btn btn-warning  mt-5' onClick={this.loadPopulars}>Los más buscados</button>
         </div>
         <h2 className='my-3'>{this.state.title}</h2>
-        <Carousel className='col-10 mx-auto text-white'>
+        <Carousel className='text-white'>
           {this.state.products.slice(0, 9).map((item, i) => {
             console.log(item, i);
             return <Carousel.Item style={{}}>

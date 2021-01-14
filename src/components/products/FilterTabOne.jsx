@@ -9,7 +9,6 @@ function FilterTabOne() {
         <section>
             <SearchFilter />
             <div className="d-flex selects-filter-search justify-content-between mt-5">
-                <Category />
                 <SubCategory />
                 <Qualification />
             </div>

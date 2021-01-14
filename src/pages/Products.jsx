@@ -28,7 +28,7 @@ export default class Products extends Component {
                     <div className="mt-4">
                         <CarouselApp />
                     </div>
-                    <div className="d-flex justify-content-between">
+                    <div className="d-flex justify-content-between mt-5">
                         <FilterProducts setCategory={this.setCategory} />
                         <CardInfoSection />
                     </div>

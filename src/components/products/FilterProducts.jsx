@@ -72,13 +72,13 @@ function FilterProducts({ setCategory }) {
                         onClick={() => { toggle('5'); }}
                     ><i class="fas fa-id-card-alt mb-4 icon-tab-filter-products-five"></i>Servicios</p>
                 </NavItem>
-                <NavItem onClick={renderCategory} value="Negocios">
+                {/* <NavItem onClick={renderCategory} value="Negocios">
                     <p
                         className="tab-filter-products-two justify-content-center d-flex align-items-center
               px-4 flex-column"
                         onClick={() => { toggle('6'); }}
                     ><i class="fas fa-store mb-4 icon-tab-filter-products-six"></i>Negocios</p>
-                </NavItem>
+                </NavItem> */}
             </Nav>
             <TabContent activeTab={activeTab} className="d-flex tab-content-filter-style align-items-center
         justify-content-center">
@@ -89,13 +89,27 @@ function FilterProducts({ setCategory }) {
                 </TabPane >
                 <TabPane tabId="2">
                     {/* <InfoTabTwo /> */}
-
+                    <section className="d-flex">
+                        <FilterTabOne />
+                    </section>
                 </TabPane>
                 <TabPane tabId="3">
                     {/* <InfoTabThree /> */}
+                    <section className="d-flex">
+                        <FilterTabOne />
+                    </section>
                 </TabPane>
                 <TabPane tabId="4">
                     {/* <InfoTabFour /> */}
+                    <section className="d-flex">
+                        <FilterTabOne />
+                    </section>
+                </TabPane>
+                <TabPane tabId="5">
+                    {/* <InfoTabFour /> */}
+                    <section className="d-flex">
+                        <FilterTabOne />
+                    </section>
                 </TabPane>
             </TabContent >
         </div >

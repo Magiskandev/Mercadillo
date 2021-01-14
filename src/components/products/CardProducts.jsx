@@ -46,25 +46,26 @@ const CardProducts = ({ category }) => {
 
     return (
         <>
-            <section
-                style={{ width: '1026px' }}
-                className="container-fluid d-flex
-        flex-wrap h-auto section-cards-global justify-content-between px-3">
+            <div className="d-flex flex-column section-cards-global">
+                <button className="btn-reset-filter-products" onClick={() => fetchProducts()}>Resetear filtro</button>
+                <section
+                    style={{ width: '1026px' }}
+                    className="d-flex
+        flex-wrap h-auto  justify-content-between px-3">
 
-                <button onClick={() => fetchProducts()}>resetear filtro</button>
-                <CardProduct
-                    products={currentProducts}
-                />
+                    <CardProduct
+                        products={currentProducts}
+                    />
 
-                <Pagination
-                    productsPerPage={productsPerPageTwo}
-                    totalProducts={productsAccess.length}
-                    paginate={paginateTwo} />
-            </section>
-
+                    <Pagination
+                        productsPerPage={productsPerPageTwo}
+                        totalProducts={productsAccess.length}
+                        paginate={paginateTwo} />
+                </section>
 
 
-            {/* <section
+
+                {/* <section
                 style={{ width: '1026px' }}
                 className="container-fluid d-flex
         flex-wrap h-auto">
@@ -78,7 +79,7 @@ const CardProducts = ({ category }) => {
                 productsPerPage={productsPerPage}
                 totalProducts={products.length}
                 paginate={paginate} /> */}
-
+            </div>
         </>
     )
 }
