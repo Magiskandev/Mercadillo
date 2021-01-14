@@ -243,8 +243,8 @@ export default class ProductForm extends Component {
             });
         };
         return (
-            <section >
-                <article className='col-5 card p-3 ml-2 mt-5'>
+            <section className="section-global-add-product">
+                <article className='col-5 card ml-2 my-5'>
                     <div className='row'>
                         <button className='col-3 mx-3 btn btn-primary' onClick={this.editProduct}>EDIT</button>
                         <button className='col-3 mx-3 btn btn-danger' onClick={this.clearFields}>DELETE</button>
