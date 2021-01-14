@@ -18,10 +18,32 @@
     height: 0;
 }
 
-.content{
-   border: 2px solid lightgoldenrodyellow;
+.content-line {
+   border: 2px solid rgb(61, 61, 59);
 }
 
 .acordeon .item .content.show{
     height: 150px;
+}
+
+.section-page-support {
+    margin-top: 200px !important;
+}
+
+.title-btn-support {
+    font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+color: #2C2C2C;
+border: none;
+outline: none;
+}
+
+.content-text-support {
+    font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+color: #2C2C2C;
 }

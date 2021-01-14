@@ -1,14 +1,15 @@
-import {Component} from 'react';
+import { Component } from 'react';
 import SupportAccordion from '../components/support/SupportAccordion';
+import NavPrincipal from '../components/base/NavPrincipal'
+import Footer from '../components/base/Footer';
 
-export default class Support extends Component{
-    render(){
-        return(
+export default class Support extends Component {
+    render() {
+        return (
             <section className="global-section-home">
-                <div style={{backgroundColor: '#ffeaa7', textAlign: 'center'}}>
-                    <h1>Soporte</h1>                    
-                </div>
-                <SupportAccordion/>
+                <NavPrincipal />
+                <SupportAccordion />
+                <Footer />
             </section>
         )
     }
